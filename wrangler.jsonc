@@ -8,15 +8,15 @@
   },
   "workers_dev": false,
   "route": {
-    "pattern": "example.org/*",
-    "zone_name": "example.org"
+    "pattern": "bartolmarketing.com/*",
+    "zone_name": "bartolmarketing.com"
   },
   "env": {
     "staging": {
       "name": "bartol-marketing-staging",
       "route": {
-        "pattern": "staging.example.org/*",
-        "zone_name": "example.org"
+        "pattern": "staging.bartolmarketing.com/*",
+        "zone_name": "bartolmarketing.com"
       }
     }
   }
