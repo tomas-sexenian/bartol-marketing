@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bartol Marketing - Agencia de marketing digital, creación de contenido y desarrollo web en Uruguay. Potenciamos tu presencia online.">
+    <meta name="keywords" content="marketing digital, redes sociales, desarrollo web, seo, uruguay, contenido digital, e-commerce, bartol marketing">
+    <title>Bartol Marketing - Agencia Digital</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>B</text></svg>">
+    <style>
+        :root {
+            --color-black: #111111;
+            --color-dark-pink: #F9C0D3;
+            --color-white: #f4f4f4;
+            --color-grey: #cccccc;
+            --scrollbar-track: #333;
+            --scrollbar-thumb: var(--color-dark-pink);
+            --scrollbar-thumb-hover: #a11448;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--color-black);
+            color: var(--color-white);
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+        header {
+            background: var(--color-black);
+            color: var(--color-white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        header.scrolled {
+            background-color: rgba(17, 17, 17, 0.9);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--color-white);
+            text-decoration: none;
+        }
+        header .logo span {
+            color: var(--color-dark-pink);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 25px;
+        }
+        nav ul li a {
+            color: var(--color-white);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--color-dark-pink);
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--color-white);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        #hero {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23111111"/><circle cx="20" cy="20" r="2" fill="%23D81B60"/><circle cx="80" cy="80" r="3" fill="%23D81B60"/><circle cx="50" cy="50" r="1" fill="%23f4f4f4"/></svg>') repeat;
+            background-size: cover;
+        }
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--color-white);
+            animation: fadeInDown 1s ease-out;
+        }
+        #hero h1 span {
+            color: var(--color-dark-pink);
+        }
+        #hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--color-grey);
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: backwards;
+        }
+        section {
+            padding: 60px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        section.visible {
+             opacity: 1;
+             transform: translateY(0);
+        }
+        section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--color-white);
+        }
+        section h2 span {
+             color: var(--color-dark-pink);
+        }
+        #servicios .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .service-item {
+            background: #222;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-item:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
+        }
+        .service-item h3 {
+            font-size: 1.4rem;
+            color: var(--color-dark-pink);
+            margin-bottom: 15px;
+        }
+        .service-item p {
+            font-size: 0.95rem;
+            color: var(--color-grey);
+        }
+        #portfolio .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .portfolio-item {
+            background: #222;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .portfolio-item:hover {
+             transform: scale(1.02);
+             box-shadow: 0 8px 20px rgba(216, 27, 96, 0.2);
+        }
+        .portfolio-item.featured-item {
+            border: 2px solid var(--color-dark-pink);
+        }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            background-color: #2a2a2a;
+        }
+        .featured-item .carousel-container {
+             height: 280px;
+        }
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+            background-color: #222;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .carousel-slide img.vertical-image {
+            object-fit: contain;
+        }
+        .carousel-prev,
+        .carousel-next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: auto;
+            padding: 10px 12px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.4);
+            border: none;
+            border-radius: 3px;
+            user-select: none;
+            z-index: 2;
+            transition: background-color 0.3s ease;
+        }
+        .carousel-prev:hover,
+        .carousel-next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .carousel-prev {
+            left: 10px;
+        }
+        .carousel-next {
+            right: 10px;
+        }
+        .portfolio-content {
+            padding: 20px;
+            flex-grow: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .portfolio-content h3 {
+            font-size: 1.3rem;
+            color: var(--color-dark-pink);
+            margin-bottom: 15px;
+            flex-shrink: 0;
+        }
+        .portfolio-content p {
+            font-size: 0.9rem;
+            color: var(--color-grey);
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .scrollable-content {
+            max-height: 180px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+            padding-right: 8px;
+        }
+        .scrollable-content::-webkit-scrollbar {
+            width: 8px;
+        }
+        .scrollable-content::-webkit-scrollbar-track {
+            background: var(--scrollbar-track);
+            border-radius: 4px;
+        }
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background-color: var(--scrollbar-thumb);
+            border-radius: 4px;
+            border: 2px solid var(--scrollbar-track);
+        }
+        .scrollable-content::-webkit-scrollbar-thumb:hover {
+             background-color: var(--scrollbar-thumb-hover);
+        }
+        .portfolio-content p:last-child {
+            margin-bottom: 0;
+        }
+        #nosotros {
+            background-color: #1a1a1a;
+        }
+        #nosotros .about-content {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        #nosotros .about-text {
+            flex: 1;
+        }
+        #nosotros p {
+             color: var(--color-grey);
+             margin-bottom: 15px;
+        }
+        #contacto .contact-info {
+            text-align: center;
+        }
+        #contacto p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--color-grey);
+        }
+        #contacto .contact-details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .contact-item {
+            font-size: 1rem;
+            color: var(--color-white);
+        }
+        .contact-item a {
+            color: var(--color-dark-pink);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            word-break: break-all;
+        }
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .whatsapp-button:hover {
+            background-color: #1DAE54;
+        }
+        footer {
+            background: #0a0a0a;
+            color: var(--color-grey);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (min-width: 992px) {
+            #portfolio .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .portfolio-item.featured-item {
+                grid-column: span 2;
+            }
+            .featured-item .scrollable-content {
+                max-height: 150px;
+            }
+        }
+         @media (min-width: 601px) and (max-width: 991px) {
+            #portfolio .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+             .portfolio-item.featured-item {
+                 grid-column: span 2;
+             }
+         }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            nav {
+                 width: 100%;
+                 max-height: 0;
+                 overflow: hidden;
+                 transition: max-height 0.3s ease-out;
+            }
+            nav.active {
+                 max-height: 300px;
+            }
+            nav ul {
+                flex-direction: column;
+                width: 100%;
+                padding-top: 1rem;
+            }
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            .menu-toggle {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+            #hero h1 {
+                font-size: 2.5rem;
+            }
+            #hero p {
+                font-size: 1rem;
+            }
+            section h2 {
+                font-size: 2rem;
+            }
+             #nosotros .about-content {
+                flex-direction: column;
+            }
+             #portfolio .portfolio-grid {
+                 grid-template-columns: 1fr;
+             }
+             .portfolio-item.featured-item {
+                  grid-column: span 1;
+             }
+             .featured-item .carousel-container {
+                  height: 250px;
+             }
+            #contacto .contact-details {
+                 flex-direction: column;
+                 gap: 15px;
+            }
+        }
+         @media (max-width: 600px) {
+              .featured-item .carousel-container {
+                  height: 220px;
+             }
+             .carousel-container {
+                  height: 200px;
+             }
+             .scrollable-content {
+                 max-height: 150px;
+             }
+         }
+    </style>
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="container">
+            <a href="#hero" class="logo">Bartol<span>.</span>Marketing</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <h1>Potenciamos Tu <span>Presencia Digital</span></h1>
+            <p>En Bartol Marketing, combinamos creatividad, estrategia y tecnología para llevar tu marca al siguiente nivel. Expertos en marketing digital, contenido atractivo y desarrollo web a medida en Uruguay.</p>
+        </div>
+    </section>
+
+    <section id="servicios">
+        <div class="container">
+            <h2>Nuestros <span>Servicios</span></h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <h3>Gestión de Redes Sociales</h3>
+                    <p>Creación de contenido estratégico y manejo de comunidades para conectar con tu audiencia.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Desarrollo Web</h3>
+                    <p>Diseño y creación de sitios web optimizados, personalizados y responsivos.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Mantenimiento Web</h3>
+                    <p>Actualización constante y soporte técnico para garantizar el óptimo funcionamiento de tu sitio.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Marketing Digital</h3>
+                    <p>Campañas publicitarias efectivas en Meta y Google Ads para alcanzar tus objetivos.</p>
+                </div>
+                <div class="service-item">
+                    <h3>Consultoría Digital</h3>
+                    <p>Asesoramiento estratégico personalizado para potenciar tu marca en el entorno online.</p>
+                </div>
+                <div class="service-item">
+                    <h3>E-commerce</h3>
+                    <p>Desarrollo e implementación de tiendas online eficientes y optimizadas para la venta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2><span>Portfolio</span> Destacado</h2>
+            <div class="portfolio-grid">
+
+                 <div class="portfolio-item featured-item">
+                     <div class="carousel-container">
+                        <div class="carousel-slide active">
+                            <img src="sources/img/portfolio_images/36.jpg" alt="DELUNO Proyecto Imagen 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/37.jpg" alt="DELUNO Proyecto Imagen 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/34.jpg" alt="DELUNO Proyecto Imagen 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/35.jpg" alt="DELUNO Proyecto Imagen 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/41.jpg" alt="DELUNO Proyecto Imagen 5">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/42.jpg" alt="DELUNO Proyecto Imagen 6">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/44.jpg" alt="DELUNO Proyecto Imagen 7">
+                        </div>
+                         <button class="carousel-prev">&#10094;</button>
+                         <button class="carousel-next">&#10095;</button>
+                     </div>
+                    <div class="portfolio-content scrollable-content">
+                        <h3>DELUNO</h3>
+                        <p>
+                            Empresa dedicada a importar y distribuir productos de alta calidad para
+                            mascotas en Uruguay. A través de sus tres marcas principales (La Mascota, Deluno, Bravery), ha
+                            logrado posicionarse como referente en el rubro.
+                        </p>
+                        <p>
+                            La Mascota: Tienda y veterinaria integral. 🏥🐶<br>
+                            Deluno: Importadora de accesorios y alimentos premium. 📦🌟<br>
+                            Bravery: Alimento monoproteico, grain-free. 🥩🐾
+                        </p>
+                        <p>✅ Objetivo: Fortalecer presencia digital, mejorar comunicación y aumentar fidelización.</p>
+                        <p>🎯 Resultado: Estrategia de contenido coherente (promociones, valor, campañas). Mayor interacción, posicionamiento e incremento en ventas (físicas y e-commerce).</p>
+                    </div>
+                </div>
+
+                 <div class="portfolio-item featured-item">
+                    <div class="carousel-container">
+                        <div class="carousel-slide active">
+                            <img src="sources/img/portfolio_images/21.jpg" alt="MAGNOLIAS Proyecto Imagen 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/22.jpg" alt="MAGNOLIAS Proyecto Imagen 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/23.jpg" alt="MAGNOLIAS Proyecto Imagen 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/24.jpg" alt="MAGNOLIAS Proyecto Imagen 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/25.jpg" alt="MAGNOLIAS Proyecto Imagen 5">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/28.jpg" alt="MAGNOLIAS Proyecto Imagen 6">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/29.png" alt="MAGNOLIAS Proyecto Imagen 7">
+                        </div>
+                         <button class="carousel-prev">&#10094;</button>
+                         <button class="carousel-next">&#10095;</button>
+                    </div>
+                    <div class="portfolio-content scrollable-content">
+                        <h3>MAGNOLIAS</h3>
+                        <p>Centro de belleza y bienestar que combina innovación y experiencia en tratamientos personalizados.</p>
+                        <p>
+                            ✅ Principales Lanzamientos:<br>
+                            - Primelase: Depilación láser.<br>
+                            - Exion: Rejuvenecimiento facial.<br>
+                            - Bride Plans: Tratamientos para novias. 👰‍♀️✨<br>
+                            - Vaclo Actv8 Skin: Mejora textura/luminosidad.<br>
+                            - Bioestimuladores TKN HA3: Hidratación y firmeza.<br>
+                            - Nordlys: Luz pulsada (rosácea, manchas).
+                        </p>
+                         <p>🎯 Resultado: Excelentes resultados en lanzamientos (especialmente Primelase) gracias a estrategias combinadas de descuentos, 2x1, campañas digitales y marketing tradicional.</p>
+                     </div>
+                 </div>
+
+                <div class="portfolio-item">
+                    <div class="carousel-container">
+                        <div class="carousel-slide active">
+                            <img src="sources/img/portfolio_images/5.png" alt="ORANGE REVESTIMIENTOS Proyecto Imagen 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/6.png" alt="ORANGE REVESTIMIENTOS Proyecto Imagen 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/7.png" alt="ORANGE REVESTIMIENTOS Proyecto Imagen 3">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/8.png" alt="ORANGE REVESTIMIENTOS Proyecto Imagen 4">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="sources/img/portfolio_images/9.png" alt="ORANGE REVESTIMIENTOS Proyecto Imagen 5">
+                        </div>
+                        <button class="carousel-prev">&#10094;</button>
+                        <button class="carousel-next">&#10095;</button>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>ORANGE REVESTIMIENTOS</h3>
+                        <p>✅ Objetivo: Modernizar la imagen de la marca para reflejar su crecimiento y visión innovadora.</p>
+                        <p>🎯 Resultado: Una identidad coherente y actualizada, con contenido que destaca la modernidad del diseño de hogar.</p>
+                    </div>
+                </div>
+
+                 <div class="portfolio-item">
+                     <div class="carousel-container">
+                         <div class="carousel-slide active">
+                             <img src="sources/img/portfolio_images/10.png" alt="RISQUE Proyecto Imagen 1">
+                         </div>
+                         <div class="carousel-slide">
+                             <img src="sources/img/portfolio_images/11.png" alt="RISQUE Proyecto Imagen 2">
+                         </div>
+                         <button class="carousel-prev">&#10094;</button>
+                         <button class="carousel-next">&#10095;</button>
+                     </div>
+                    <div class="portfolio-content">
+                        <h3>RISQUE</h3>
+                        <p>✅ Objetivo: Posicionar la marca en redes sociales destacando sus productos y diferenciadores.</p>
+                        <p>🎯 Resultado: Un feed atractivo y dinámico que resalta las cualidades de cada línea, generando mayor reconocimiento y fidelización.</p>
+                    </div>
+                </div>
+
+                 <div class="portfolio-item">
+                     <div class="carousel-container">
+                         <div class="carousel-slide active">
+                             <img src="sources/img/portfolio_images/14.jpg" alt="SLEEP Proyecto Imagen 1">
+                         </div>
+                         <div class="carousel-slide">
+                             <img src="sources/img/portfolio_images/15.jpg" alt="SLEEP Proyecto Imagen 2">
+                         </div>
+                         <div class="carousel-slide">
+                             <img src="sources/img/portfolio_images/16.jpg" alt="SLEEP Proyecto Imagen 3">
+                         </div>
+                         <div class="carousel-slide">
+                             <img src="sources/img/portfolio_images/17.png" alt="SLEEP Proyecto Imagen 4">
+                         </div>
+                         <button class="carousel-prev">&#10094;</button>
+                         <button class="carousel-next">&#10095;</button>
+                     </div>
+                    <div class="portfolio-content">
+                        <h3>SLEEP</h3>
+                        <p>✅ Objetivo: Construir una identidad visual alineada con sus valores de sostenibilidad y bienestar.</p>
+                        <p>🎯 Resultado: Presencia digital coherente que refleja su compromiso con la belleza consciente.</p>
+                    </div>
+                </div>
+
+                 <div class="portfolio-item">
+                     <div class="carousel-container">
+                         <div class="carousel-slide active">
+                             <img src="sources/img/portfolio_images/19.jpg" alt="NUTRICIÓN ROMINA LUCERO Proyecto Imagen 1">
+                         </div>
+                         <div class="carousel-slide">
+                             <img src="sources/img/portfolio_images/20.jpg" alt="NUTRICIÓN ROMINA LUCERO Proyecto Imagen 2">
+                         </div>
+                         <button class="carousel-prev">&#10094;</button>
+                         <button class="carousel-next">&#10095;</button>
+                     </div>
+                    <div class="portfolio-content">
+                        <h3>NUTRICIÓN ROMINA LUCERO</h3>
+                        <p>✅ Objetivo: Mantener estética visual y profesionalizar posteos para comunicación más estratégica.</p>
+                        <p>🎯 Resultado: Calendario de contenidos alineado con estacionalidad, asegurando coherencia.</p>
+                     </div>
+                 </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <div class="container">
+             <h2>Sobre <span>Nosotros</span></h2>
+             <div class="about-content">
+                 <div class="person-block">
+                     <div class="person-image">
+                        <img src="sources/img/portfolio_images/0.png" alt="Foto de Camila Bartol">
+                     </div>
+                     <div class="about-text">
+                         <h3>Camila Bartol</h3>
+                         <p>Licenciada en Comunicación con especialización en Publicidad y Marketing. Apasionada por crear contenido estratégico que potencia marcas y genera conexiones reales con su audiencia. Combina creatividad, análisis y planificación para lograr resultados efectivos.</p>
+                     </div>
+                 </div>
+                 <div class="person-block">
+                     <div class="person-image">
+                         <img src="sources/img/portfolio_images/1.png" alt="Foto de Tomás Sexenian">
+                      </div>
+                     <div class="about-text">
+                        <h3>Tomás Sexenian</h3>
+                         <p>Estudiante de Ingeniería en Sistemas (UdelaR) y profesional IT con experiencia local e internacional. Especializado en desarrollo web full-stack, sistemas de gestión y diseños a medida, enfocado en soluciones eficientes y escalables.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        #nosotros {
+            background-color: #1a1a1a;
+         }
+        #nosotros .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+         }
+
+         .person-block {
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+             gap: 20px;
+             text-align: center;
+         }
+
+         .person-image {
+             width: 150px;
+             height: 200px;
+             flex-shrink: 0;
+             overflow: hidden;
+             border-radius: 8px;
+             background-color: #333;
+         }
+
+         .person-image img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+             display: block;
+         }
+
+         #nosotros .about-text {
+             flex: 1;
+         }
+          #nosotros .about-text h3 {
+            color: var(--color-dark-pink);
+            margin-bottom: 10px;
+          }
+
+         #nosotros p {
+             color: var(--color-grey);
+             margin-bottom: 0;
+             font-size: 0.95rem;
+         }
+
+         @media (min-width: 768px) {
+             #nosotros .about-content {
+                 grid-template-columns: 1fr 1fr;
+                 gap: 50px;
+             }
+              .person-block {
+                  flex-direction: row;
+                  text-align: left;
+                  align-items: flex-start;
+                  gap: 30px;
+             }
+             .person-image {
+                 width: 120px;
+                 height: 160px;
+             }
+         }
+         @media (min-width: 992px) {
+              .person-image {
+                 width: 150px;
+                 height: 200px;
+             }
+         }
+    </style>
+
+<section id="contacto">
+    <div class="container">
+        <h2 class="contact-heading"><span>¡Hablemos!</span></h2>
+        <div class="contact-info">
+            <p class="contact-subtitle">¿Listo para impulsar tu negocio?</p>
+            <div class="contact-details">
+                <div class="contact-item email-item">
+                     <a href="mailto:bartol.marketing@gmail.com" class="contact-link email-link">bartol.marketing@gmail.com</a>
+                </div>
+                <div class="contact-item phone-item">
+                     <a href="tel:+59892711562" class="contact-link">(+598) 092 711 562</a>
+                 </div>
+                 <div class="contact-item whatsapp-item">
+                     <a href="https://wa.me/59892711562?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20marketing." class="whatsapp-button flashy-button" target="_blank" rel="noopener noreferrer">
+                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20" fill="currentColor"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 .4c101.2 0 183.1 81.9 183.1 183.1 0 32.3-8.5 63.3-24.1 90.9L464 438.8l-76.3-19.9c-26.4 15.9-57.4 25.4-90.2 25.4h-.1c-101.2 0-183.1-81.9-183.1-183.1S122.6 114.3 223.9 114.3zm95.5 169.1c-6.1-3-36.2-17.9-41.9-19.9-5.7-2-9.8-3-13.9 3s-15.9 19.9-19.5 23.9-7.1 4.9-13.2 1.7c-6-.3-25.3-9.4-48.1-29.7-17.8-15.9-29.8-35.5-33.2-41.7s-.4-9.4 2.6-12.4c2.7-2.7 6.1-7.1 9.1-10.6 3-3.5 4-6.1 6.1-10.1 2.1-4 1.1-7.5-.5-10.6s-13.9-33.5-19-45.9c-5.1-12.4-10.3-10.6-14.4-10.8-3.9-.2-8.5-.2-13 .2s-11.7 1.7-17.8 8.3c-6.1 6.5-23.2 22.7-23.2 55.4 0 32.7 23.7 64.4 27 68.8 3.3 4.4 46.4 70.9 113.1 99.4 15.9 6.8 28.7 10.9 38.4 14 14.9 4.7 28.7 4 40.1 2.4 11.9-1.6 36.2-14.8 41.3-29.1 5.1-14.3 5.1-26.4 3.5-29.1-1.6-2.7-5.7-4.4-11.8-7.5z"/></svg>
+                         Chatea por WhatsApp
+                     </a>
+                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+
+    #contacto {
+        background: linear-gradient(135deg, var(--color-black) 0%, #3a0a1a 50%, var(--color-dark-pink) 100%);
+        padding: 80px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+     }
+
+    #contacto::before {
+         content: '';
+         position: absolute;
+         top: -50%;
+         left: -50%;
+         width: 200%;
+         height: 200%;
+         background: radial-gradient(circle, rgba(216, 27, 96, 0.1) 0%, rgba(216, 27, 96, 0) 60%);
+         animation: rotateBackground 20s linear infinite;
+         z-index: 0;
+     }
+
+     @keyframes rotateBackground {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    #contacto .container {
+         position: relative;
+         z-index: 1;
+     }
+
+    .contact-heading span {
+        font-size: 4rem;
+        font-weight: bold;
+        color: var(--color-white);
+        text-shadow: 0 0 10px var(--color-dark-pink), 0 0 20px var(--color-dark-pink), 0 0 30px rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        animation: pulseText 2s infinite alternate;
+    }
+
+     @keyframes pulseText {
+         from { transform: scale(1); text-shadow: 0 0 10px var(--color-dark-pink), 0 0 20px var(--color-dark-pink), 0 0 30px rgba(255, 255, 255, 0.5); }
+         to { transform: scale(1.05); text-shadow: 0 0 15px var(--color-dark-pink), 0 0 30px var(--color-dark-pink), 0 0 45px rgba(255, 255, 255, 0.7); }
+     }
+
+
+    .contact-subtitle {
+        font-size: 1.5rem;
+        color: var(--color-white);
+        margin-bottom: 40px !important;
+        font-weight: 300;
+    }
+
+    #contacto .contact-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 35px;
+        flex-wrap: wrap;
+    }
+    .contact-item {
+        font-size: 1.2rem;
+        color: var(--color-white);
+    }
+
+    .contact-link {
+        color: var(--color-white);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+        display: inline-block;
+        padding: 5px 0;
+        font-size: 1.6rem;
+    }
+    .contact-link:hover {
+        color: var(--color-dark-pink);
+        transform: scale(1.05);
+     }
+
+    .email-link {
+        font-weight: bold;
+        font-size: 1.8rem;
+        color: var(--color-white);
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        border-bottom: 2px solid transparent;
+    }
+     .email-link:hover {
+        color: #ffc1e3; /* Lighter pink on hover */
+        text-shadow: 0 0 8px var(--color-dark-pink);
+        border-bottom: 2px solid var(--color-dark-pink);
+        transform: scale(1.1);
+     }
+
+     .phone-item .contact-link {
+        font-size: 1.4rem;
+        color: var(--color-grey);
+     }
+     .phone-item .contact-link:hover {
+        color: var(--color-white);
+     }
+
+
+    .flashy-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(45deg, #11d15d, #25D366, #1dd060);
+        color: white !important;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.4rem;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        animation: pulseButton 1.5s infinite;
+     }
+
+     .flashy-button svg {
+        transition: transform 0.3s ease;
+     }
+
+    .flashy-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        animation-play-state: paused; /* Pause pulse on hover */
+    }
+     .flashy-button:hover svg {
+        transform: rotate(15deg) scale(1.1);
+     }
+
+    @keyframes pulseButton {
+        0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+        50% { transform: scale(1.05); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5); }
+        100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+    }
+
+
+    @media (max-width: 768px) {
+         .contact-heading span {
+             font-size: 3rem;
+         }
+         .contact-subtitle {
+             font-size: 1.2rem;
+         }
+         .contact-link {
+             font-size: 1.3rem;
+         }
+          .email-link {
+             font-size: 1.5rem;
+         }
+         .flashy-button {
+             font-size: 1.2rem;
+             padding: 12px 25px;
+         }
+         #contacto .contact-details {
+             gap: 25px;
+         }
+    }
+     @media (max-width: 480px) {
+          .contact-heading span {
+             font-size: 2.5rem;
+         }
+     }
+</style>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Bartol Marketing. Todos los derechos reservados. Montevideo, Uruguay.</p>
+        </div>
+    </footer>
+
+    <script>
+        const header = document.getElementById('main-header');
+        const nav = document.getElementById('main-nav');
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = nav.querySelectorAll('a');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetHref = link.getAttribute('href');
+                 if (targetHref && targetHref.startsWith('#')) {
+                     const targetElement = document.querySelector(targetHref);
+                     if (targetElement) {
+                         e.preventDefault();
+                         targetElement.scrollIntoView({ behavior: 'smooth' });
+                     }
+                 }
+                 if (nav.classList.contains('active')) {
+                    nav.classList.remove('active');
+                 }
+            });
+        });
+
+        const sections = document.querySelectorAll('section');
+        const sectionOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, sectionOptions);
+
+        sections.forEach(section => {
+             sectionObserver.observe(section);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousels = document.querySelectorAll('.carousel-container');
+            const autoSlideInterval = 5000;
+            let timers = new Map();
+
+            function checkImageOrientation(imgElement) {
+                 if (!imgElement.naturalWidth || !imgElement.naturalHeight) {
+                     return;
+                 }
+                 if (imgElement.naturalHeight > imgElement.naturalWidth) {
+                     imgElement.classList.add('vertical-image');
+                 } else {
+                     imgElement.classList.remove('vertical-image');
+                 }
+            }
+
+            carousels.forEach((carousel) => {
+                const slides = carousel.querySelectorAll('.carousel-slide');
+                const images = carousel.querySelectorAll('.carousel-slide img');
+                const prevBtn = carousel.querySelector('.carousel-prev');
+                const nextBtn = carousel.querySelector('.carousel-next');
+                let currentSlideIndex = 0;
+
+                 images.forEach(img => {
+                    if (img.complete) {
+                        checkImageOrientation(img);
+                    } else {
+                        img.onload = () => checkImageOrientation(img);
+                    }
+                 });
+
+                function showSlide(carouselElement, slideIndex) {
+                    const carouselSlides = carouselElement.querySelectorAll('.carousel-slide');
+                    if (carouselSlides.length === 0) return 0;
+                    carouselSlides.forEach(slide => slide.classList.remove('active'));
+                    const newIndex = (slideIndex + carouselSlides.length) % carouselSlides.length;
+                    carouselSlides[newIndex].classList.add('active');
+                    return newIndex;
+                }
+
+                function nextSlideFunc(carouselElement) {
+                    const currentActive = carouselElement.querySelector('.carousel-slide.active');
+                    let currentIndex = currentActive ? Array.from(carouselElement.querySelectorAll('.carousel-slide')).indexOf(currentActive) : 0;
+                    return showSlide(carouselElement, currentIndex + 1);
+                 }
+
+                function prevSlideFunc(carouselElement) {
+                     const currentActive = carouselElement.querySelector('.carousel-slide.active');
+                     let currentIndex = currentActive ? Array.from(carouselElement.querySelectorAll('.carousel-slide')).indexOf(currentActive) : 0;
+                     return showSlide(carouselElement, currentIndex - 1);
+                 }
+
+                currentSlideIndex = showSlide(carousel, 0);
+
+                if (prevBtn && nextBtn && slides.length > 1) {
+                    nextBtn.addEventListener('click', () => {
+                        currentSlideIndex = nextSlideFunc(carousel);
+                        resetTimer(carousel);
+                    });
+
+                    prevBtn.addEventListener('click', () => {
+                        currentSlideIndex = prevSlideFunc(carousel);
+                        resetTimer(carousel);
+                    });
+                } else if (slides.length <= 1) {
+                    if(prevBtn) prevBtn.style.display = 'none';
+                    if(nextBtn) nextBtn.style.display = 'none';
+                }
+
+                function startTimer(carouselElement) {
+                    if (timers.has(carouselElement)) {
+                       clearInterval(timers.get(carouselElement));
+                       timers.delete(carouselElement);
+                    }
+                     if (carouselElement.querySelectorAll('.carousel-slide').length > 1) {
+                         let timerId = setInterval(() => {
+                            nextSlideFunc(carouselElement);
+                        }, autoSlideInterval);
+                        timers.set(carouselElement, timerId);
+                    }
+                }
+
+                function resetTimer(carouselElement) {
+                    startTimer(carouselElement);
+                }
+
+                startTimer(carousel);
+            });
+        });
+
+    </script>
+</body>
+</html>
