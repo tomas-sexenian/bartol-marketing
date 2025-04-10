@@ -1,0 +1,21 @@
+{
+  "name": "bartol-marketing",
+  "compatibility_date": "2025-04-10",
+  "assets": {
+    "directory": "./dist"
+  },
+  "workers_dev": false,
+  "route": {
+    "pattern": "example.org/*",
+    "zone_name": "example.org"
+  },
+  "env": {
+    "staging": {
+      "name": "bartol-marketing-staging",
+      "route": {
+        "pattern": "staging.example.org/*",
+        "zone_name": "example.org"
+      }
+    }
+  }
+}
