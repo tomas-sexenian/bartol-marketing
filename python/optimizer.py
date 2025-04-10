@@ -4,10 +4,10 @@ from pathlib import Path
 from PIL import Image
 from bs4 import BeautifulSoup, Comment
 
-root = Path(__file__).parent
-html_path = root / "index.dev.html"
-dev_html_path = root / "index.dev.html"
-img_dir = root / "sources" / "img" / "portfolio_images"
+root = Path(__file__).resolve().parent.parent
+dev_html_path = root / "dev" / "index.dev.html"
+html_path = dev_html_path
+img_dir = root / "dev" / "sources" / "img" / "portfolio_images"
 
 if not html_path.exists():
     html_path = dev_html_path
