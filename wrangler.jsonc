@@ -1,8 +1,10 @@
 {
   "name": "bartol-marketing",
   "compatibility_date": "2025-04-10",
+  "main": "_worker.js",
   "assets": {
-    "directory": "./dist"
+    "directory": "./dist",
+    "binding": "ASSETS"
   },
   "workers_dev": false,
   "route": {
