@@ -1,141 +1,602 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><meta content="Bartol Marketing - Agencia de marketing digital, creación de contenido y desarrollo web en Uruguay. Potenciamos tu presencia online." name="description"><meta content="marketing digital, redes sociales, desarrollo web, seo, uruguay, contenido digital, e-commerce, bartol marketing" name="keywords"><title>Bartol Marketing - Agencia Digital</title><link href="sources/img/favicon.ico" rel="icon" type="image/svg+xml"><style>:root{--color-black:#111111;--color-dark-pink:#F9C0D3;--color-white:#f4f4f4;--color-grey:#cccccc;--scrollbar-track:#333;--scrollbar-thumb:var(--color-dark-pink);--scrollbar-thumb-hover:#a11448}*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background-color:var(--color-black);color:var(--color-white);line-height:1.6}.container{max-width:1100px;margin:auto;padding:0 20px;overflow:hidden}header{background:var(--color-black);color:var(--color-white);padding:1rem 0;position:fixed;width:100%;top:0;z-index:1000;transition:background-color .3s ease}header.scrolled{background-color:rgba(17,17,17,.9);box-shadow:0 2px 5px rgba(0,0,0,.2)}header .container{display:flex;justify-content:space-between;align-items:center}header .logo{font-size:1.8rem;font-weight:700;color:var(--color-white);text-decoration:none}header .logo span{color:var(--color-dark-pink)}nav ul{list-style:none;display:flex}nav ul li{margin-left:25px}nav ul li a{color:var(--color-white);text-decoration:none;font-size:1rem;transition:color .3s ease}nav ul li a.active,nav ul li a:hover{color:var(--color-dark-pink)}.menu-toggle{display:none;font-size:1.5rem;color:var(--color-white);background:0 0;border:none;cursor:pointer}#hero{padding-top:120px;padding-bottom:60px;text-align:center;min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(rgba(17,17,17,.7),rgba(17,17,17,.7)),url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23111111"/><circle cx="20" cy="20" r="2" fill="%23D81B60"/><circle cx="80" cy="80" r="3" fill="%23D81B60"/><circle cx="50" cy="50" r="1" fill="%23f4f4f4"/></svg>') repeat;background-size:cover}#hero h1{font-size:3rem;margin-bottom:1rem;color:var(--color-white);animation:fadeInDown 1s ease-out}#hero h1 span{color:var(--color-dark-pink)}#hero p{font-size:1.2rem;max-width:700px;margin:0 auto;color:var(--color-grey);animation:fadeInUp 1s ease-out .5s;animation-fill-mode:backwards}section{padding:60px 0;opacity:0;transform:translateY(20px);transition:opacity .6s ease-out,transform .6s ease-out}section.visible{opacity:1;transform:translateY(0)}section h2{text-align:center;font-size:2.5rem;margin-bottom:40px;color:var(--color-white)}section h2 span{color:var(--color-dark-pink)}#servicios .service-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}.service-item{background:#222;padding:30px;border-radius:8px;text-align:center;transition:transform .3s ease,box-shadow .3s ease}.service-item:hover{transform:translateY(-5px);box-shadow:0 5px 15px rgba(216,27,96,.3)}.service-item h3{font-size:1.4rem;color:var(--color-dark-pink);margin-bottom:15px}.service-item p{font-size:.95rem;color:var(--color-grey)}#portfolio .portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}.portfolio-item{background:#222;border-radius:8px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease;display:flex;flex-direction:column;height:100%}.portfolio-item:hover{transform:scale(1.02);box-shadow:0 8px 20px rgba(216,27,96,.2)}.portfolio-item.featured-item{border:2px solid var(--color-dark-pink)}.carousel-container{position:relative;width:100%;height:220px;overflow:hidden;background-color:#2a2a2a}.featured-item .carousel-container{height:280px}.carousel-slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity .8s ease-in-out;background-color:#222}.carousel-slide.active{opacity:1;z-index:1}.carousel-slide img{width:100%;height:100%;object-fit:cover;display:block}.carousel-slide img.vertical-image{object-fit:contain}.carousel-next,.carousel-prev{cursor:pointer;position:absolute;top:50%;transform:translateY(-50%);width:auto;padding:10px 12px;color:#fff;font-weight:700;font-size:18px;background-color:rgba(0,0,0,.4);border:none;border-radius:3px;user-select:none;z-index:2;transition:background-color .3s ease}.carousel-next:hover,.carousel-prev:hover{background-color:rgba(0,0,0,.7)}.carousel-prev{left:10px}.carousel-next{right:10px}.portfolio-content{padding:20px;flex-grow:1;overflow:hidden;display:flex;flex-direction:column}.portfolio-content h3{font-size:1.3rem;color:var(--color-dark-pink);margin-bottom:15px;flex-shrink:0}.portfolio-content p{font-size:.9rem;color:var(--color-grey);margin-bottom:10px;line-height:1.5}.scrollable-content{max-height:180px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-track);padding-right:8px}.scrollable-content::-webkit-scrollbar{width:8px}.scrollable-content::-webkit-scrollbar-track{background:var(--scrollbar-track);border-radius:4px}.scrollable-content::-webkit-scrollbar-thumb{background-color:var(--scrollbar-thumb);border-radius:4px;border:2px solid var(--scrollbar-track)}.scrollable-content::-webkit-scrollbar-thumb:hover{background-color:var(--scrollbar-thumb-hover)}.portfolio-content p:last-child{margin-bottom:0}#nosotros{background-color:#1a1a1a}#nosotros .about-content{display:flex;gap:30px;align-items:flex-start}#nosotros .about-text{flex:1}#nosotros p{color:var(--color-grey);margin-bottom:15px}#contacto .contact-info{text-align:center}#contacto p{font-size:1.1rem;margin-bottom:20px;color:var(--color-grey)}#contacto .contact-details{display:flex;justify-content:center;align-items:center;gap:30px;flex-wrap:wrap}.contact-item{font-size:1rem;color:var(--color-white)}.contact-item a{color:var(--color-dark-pink);text-decoration:none;transition:color .3s ease;word-break:break-all}.contact-item a:hover{text-decoration:underline}.whatsapp-button{display:inline-block;background-color:#25d366;color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none;font-weight:700;transition:background-color .3s ease;margin-top:10px}.whatsapp-button:hover{background-color:#1dae54}footer{background:#0a0a0a;color:var(--color-grey);text-align:center;padding:20px 0;margin-top:40px;font-size:.9rem}@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}@media (min-width:992px){#portfolio .portfolio-grid{grid-template-columns:repeat(2,1fr)}.portfolio-item.featured-item{grid-column:span 2}.featured-item .scrollable-content{max-height:150px}}@media (min-width:601px) and (max-width:991px){#portfolio .portfolio-grid{grid-template-columns:repeat(2,1fr)}.portfolio-item.featured-item{grid-column:span 2}}@media (max-width:768px){header .container{flex-direction:column;align-items:flex-start}nav{width:100%;max-height:0;overflow:hidden;transition:max-height .3s ease-out}nav.active{max-height:300px}nav ul{flex-direction:column;width:100%;padding-top:1rem}nav ul li{margin:10px 0;text-align:center}.menu-toggle{display:block;position:absolute;top:1rem;right:1rem}#hero h1{font-size:2.5rem}#hero p{font-size:1rem}section h2{font-size:2rem}#nosotros .about-content{flex-direction:column}#portfolio .portfolio-grid{grid-template-columns:1fr}.portfolio-item.featured-item{grid-column:span 1}.featured-item .carousel-container{height:250px}#contacto .contact-details{flex-direction:column;gap:15px}}@media (max-width:600px){.featured-item .carousel-container{height:220px}.carousel-container{height:200px}.scrollable-content{max-height:150px}}</style></head><body><header id="main-header"><div class="container"><a class="logo" href="#hero">Bartol<span>.</span>Marketing</a><button aria-label="Toggle menu" class="menu-toggle" id="menu-toggle">☰</button><nav id="main-nav"><ul><li><a href="#hero">Inicio</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#portfolio">Portfolio</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#contacto">Contacto</a></li></ul></nav></div></header><section id="hero"><div class="container"><div class="hero-content"><div class="hero-logo-column"><div class="logo-circle-wrapper"><img alt="Logo Bartol Marketing" class="hero-logo" src="sources/img/logo.svg"></div></div><div class="hero-text-column"><h1>Potenciamos Tu<span> Presencia Digital</span></h1><p>En Bartol Marketing, combinamos creatividad, estrategia y tecnología para llevar tu marca al siguiente nivel. Expertos en marketing digital, contenido atractivo y desarrollo web a medida en Uruguay.</p></div></div></div><div class="section-fade-out"></div></section><style>:root{--color-black:#111111;--color-dark-pink:#F9C0D3;--color-white:#f4f4f4;--color-grey:#cccccc}#hero{padding-top:100px;padding-bottom:120px;min-height:auto;display:flex;align-items:center;background:linear-gradient(rgba(17,17,17,.7),rgba(17,17,17,.7)),url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="%23111111"/><circle cx="20" cy="20" r="2" fill="%23F9C0D3"/><circle cx="80" cy="80" r="3" fill="%23F9C0D3"/><circle cx="50" cy="50" r="1" fill="%23f4f4f4"/></svg>') repeat;background-size:cover;text-align:center;position:relative;z-index:1}.section-fade-out{position:absolute;bottom:0;left:0;width:100%;height:120px;background:linear-gradient(to bottom,transparent 0,var(--color-black) 95%);pointer-events:none;z-index:3}#hero .container{max-width:1100px;position:relative;z-index:2}.hero-content{display:flex;flex-direction:column;align-items:center;gap:30px}.hero-logo-column{width:100%;display:flex;justify-content:center;position:relative;z-index:1}.logo-circle-wrapper{width:180px;height:180px;border-radius:50%;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.35);background-color:#222;animation:fadeInLogo 1.5s ease-out .2s;animation-fill-mode:backwards}.hero-logo{display:block;width:100%;height:100%;object-fit:cover}@keyframes fadeInLogo{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}.hero-text-column{width:100%;position:relative;z-index:0}#hero h1{font-size:2.8rem;margin-bottom:1rem;color:var(--color-white);animation:fadeInUp 1s ease-out .5s;animation-fill-mode:backwards}#hero h1 span{color:var(--color-dark-pink)}#hero p{font-size:1.1rem;max-width:600px;margin:0 auto;color:var(--color-grey);animation:fadeInUp 1s ease-out .8s;animation-fill-mode:backwards}@media (min-width:768px){#hero{padding-top:120px;padding-bottom:150px}.section-fade-out{height:150px}.hero-content{flex-direction:row;text-align:left;gap:50px;align-items:center}.hero-logo-column{flex:0 0 220px;max-width:none;justify-content:flex-start}.logo-circle-wrapper{width:220px;height:220px;box-shadow:0 10px 25px rgba(0,0,0,.4)}.hero-text-column{flex:1}#hero h1{font-size:3.5rem}#hero p{font-size:1.2rem;margin:0;max-width:none}}@media (min-width:992px){#hero{padding-top:140px;padding-bottom:180px}.section-fade-out{height:180px}.hero-logo-column{flex:0 0 250px}.logo-circle-wrapper{width:250px;height:250px;box-shadow:0 12px 30px rgba(0,0,0,.45)}#hero h1{font-size:4rem}}#servicios{padding-top:60px;margin-top:-120px;position:relative;background:var(--color-black);z-index:0}#servicios .container{position:relative;z-index:1}@media (min-width:768px){#servicios{margin-top:-150px;padding-top:80px}}@media (min-width:992px){#servicios{margin-top:-180px;padding-top:80px}}#servicios::before{display:none;content:none}</style><section id="servicios"><div class="container"><h2>Nuestros<span>Servicios</span></h2><div class="service-grid"><div class="service-item"><h3>Gestión de Redes Sociales</h3><p>Creación de contenido estratégico y manejo de comunidades para conectar con tu audiencia.</p></div><div class="service-item"><h3>Desarrollo Web</h3><p>Diseño y creación de sitios web optimizados, personalizados y responsivos.</p></div><div class="service-item"><h3>Mantenimiento Web</h3><p>Actualización constante y soporte técnico para garantizar el óptimo funcionamiento de tu sitio.</p></div><div class="service-item"><h3>Marketing Digital</h3><p>Campañas publicitarias efectivas en Meta y Google Ads para alcanzar tus objetivos.</p></div><div class="service-item"><h3>Consultoría Digital</h3><p>Asesoramiento estratégico personalizado para potenciar tu marca en el entorno online.</p></div><div class="service-item"><h3>E-commerce</h3><p>Desarrollo e implementación de tiendas online eficientes y optimizadas para la venta.</p></div></div></div></section><section id="portfolio"><div class="container"><h2><span>Portfolio</span> Destacado</h2><div class="portfolio-grid"><div class="portfolio-item featured-item"><div class="carousel-container"><div class="carousel-slide active"><img alt="DELUNO Proyecto Imagen 1" src="sources/img/portfolio_images/36.webp"></div><div class="carousel-slide"><img alt="DELUNO Proyecto Imagen 2" src="sources/img/portfolio_images/37.webp"></div><div class="carousel-slide"><img alt="DELUNO Proyecto Imagen 3" src="sources/img/portfolio_images/34.webp"></div><div class="carousel-slide"><img alt="DELUNO Proyecto Imagen 4" src="sources/img/portfolio_images/35.webp"></div><div class="carousel-slide"><img alt="DELUNO Proyecto Imagen 5" src="sources/img/portfolio_images/41.webp"></div><div class="carousel-slide"><img alt="DELUNO Proyecto Imagen 6" src="sources/img/portfolio_images/42.webp"></div><div class="carousel-slide"><img alt="DELUNO Proyecto Imagen 7" src="sources/img/portfolio_images/44.webp"></div><button class="carousel-prev">❮</button><button class="carousel-next">❯</button></div><div class="portfolio-content scrollable-content"><h3>DELUNO</h3><p>Empresa dedicada a importar y distribuir productos de alta calidad para mascotas en Uruguay. A través de sus tres marcas principales (La Mascota, Deluno, Bravery), ha logrado posicionarse como referente en el rubro.</p><p>La Mascota: Tienda y veterinaria integral. 🏥🐶<br>Deluno: Importadora de accesorios y alimentos premium. 📦🌟<br>Bravery: Alimento monoproteico, grain-free. 🥩🐾</p><p>✅ Objetivo: Fortalecer presencia digital, mejorar comunicación y aumentar fidelización.</p><p>🎯 Resultado: Estrategia de contenido coherente (promociones, valor, campañas). Mayor interacción, posicionamiento e incremento en ventas (físicas y e-commerce).</p></div></div><div class="portfolio-item featured-item"><div class="carousel-container"><div class="carousel-slide active"><img alt="MAGNOLIAS Proyecto Imagen 1" src="sources/img/portfolio_images/21.webp"></div><div class="carousel-slide"><img alt="MAGNOLIAS Proyecto Imagen 2" src="sources/img/portfolio_images/22.webp"></div><div class="carousel-slide"><img alt="MAGNOLIAS Proyecto Imagen 3" src="sources/img/portfolio_images/23.webp"></div><div class="carousel-slide"><img alt="MAGNOLIAS Proyecto Imagen 4" src="sources/img/portfolio_images/24.webp"></div><div class="carousel-slide"><img alt="MAGNOLIAS Proyecto Imagen 5" src="sources/img/portfolio_images/25.webp"></div><div class="carousel-slide"><img alt="MAGNOLIAS Proyecto Imagen 6" src="sources/img/portfolio_images/28.webp"></div><div class="carousel-slide"><img alt="MAGNOLIAS Proyecto Imagen 7" src="sources/img/portfolio_images/29.webp"></div><button class="carousel-prev">❮</button><button class="carousel-next">❯</button></div><div class="portfolio-content scrollable-content"><h3>MAGNOLIAS</h3><p>Centro de belleza y bienestar que combina innovación y experiencia en tratamientos personalizados.</p><p>✅ Principales Lanzamientos:<br>- Primelase: Depilación láser.<br>- Exion: Rejuvenecimiento facial.<br>- Bride Plans: Tratamientos para novias. 👰‍♀️✨<br>- Vaclo Actv8 Skin: Mejora textura/luminosidad.<br>- Bioestimuladores TKN HA3: Hidratación y firmeza.<br>- Nordlys: Luz pulsada (rosácea, manchas).</p><p>🎯 Resultado: Excelentes resultados en lanzamientos (especialmente Primelase) gracias a estrategias combinadas de descuentos, 2x1, campañas digitales y marketing tradicional.</p></div></div><div class="portfolio-item"><div class="carousel-container"><div class="carousel-slide active"><img alt="ORANGE REVESTIMIENTOS Proyecto Imagen 1" src="sources/img/portfolio_images/5.webp"></div><div class="carousel-slide"><img alt="ORANGE REVESTIMIENTOS Proyecto Imagen 2" src="sources/img/portfolio_images/6.webp"></div><div class="carousel-slide"><img alt="ORANGE REVESTIMIENTOS Proyecto Imagen 3" src="sources/img/portfolio_images/7.webp"></div><div class="carousel-slide"><img alt="ORANGE REVESTIMIENTOS Proyecto Imagen 4" src="sources/img/portfolio_images/8.webp"></div><div class="carousel-slide"><img alt="ORANGE REVESTIMIENTOS Proyecto Imagen 5" src="sources/img/portfolio_images/9.webp"></div><button class="carousel-prev">❮</button><button class="carousel-next">❯</button></div><div class="portfolio-content"><h3>ORANGE REVESTIMIENTOS</h3><p>✅ Objetivo: Modernizar la imagen de la marca para reflejar su crecimiento y visión innovadora.</p><p>🎯 Resultado: Una identidad coherente y actualizada, con contenido que destaca la modernidad del diseño de hogar.</p></div></div><div class="portfolio-item"><div class="carousel-container"><div class="carousel-slide active"><img alt="RISQUE Proyecto Imagen 1" src="sources/img/portfolio_images/10.webp"></div><div class="carousel-slide"><img alt="RISQUE Proyecto Imagen 2" src="sources/img/portfolio_images/11.webp"></div><button class="carousel-prev">❮</button><button class="carousel-next">❯</button></div><div class="portfolio-content"><h3>RISQUE</h3><p>✅ Objetivo: Posicionar la marca en redes sociales destacando sus productos y diferenciadores.</p><p>🎯 Resultado: Un feed atractivo y dinámico que resalta las cualidades de cada línea, generando mayor reconocimiento y fidelización.</p></div></div><div class="portfolio-item"><div class="carousel-container"><div class="carousel-slide active"><img alt="SLEEP Proyecto Imagen 1" src="sources/img/portfolio_images/14.webp"></div><div class="carousel-slide"><img alt="SLEEP Proyecto Imagen 2" src="sources/img/portfolio_images/15.webp"></div><div class="carousel-slide"><img alt="SLEEP Proyecto Imagen 3" src="sources/img/portfolio_images/16.webp"></div><div class="carousel-slide"><img alt="SLEEP Proyecto Imagen 4" src="sources/img/portfolio_images/17.webp"></div><button class="carousel-prev">❮</button><button class="carousel-next">❯</button></div><div class="portfolio-content"><h3>SLEEP</h3><p>✅ Objetivo: Construir una identidad visual alineada con sus valores de sostenibilidad y bienestar.</p><p>🎯 Resultado: Presencia digital coherente que refleja su compromiso con la belleza consciente.</p></div></div><div class="portfolio-item"><div class="carousel-container"><div class="carousel-slide active"><img alt="NUTRICIÓN ROMINA LUCERO Proyecto Imagen 1" src="sources/img/portfolio_images/19.webp"></div><div class="carousel-slide"><img alt="NUTRICIÓN ROMINA LUCERO Proyecto Imagen 2" src="sources/img/portfolio_images/20.webp"></div><button class="carousel-prev">❮</button><button class="carousel-next">❯</button></div><div class="portfolio-content"><h3>NUTRICIÓN ROMINA LUCERO</h3><p>✅ Objetivo: Mantener estética visual y profesionalizar posteos para comunicación más estratégica.</p><p>🎯 Resultado: Calendario de contenidos alineado con estacionalidad, asegurando coherencia.</p></div></div></div></div></section><section id="nosotros"><div class="container"><h2>Sobre <span>Nosotros</span></h2><div class="about-content"><div class="person-block"><div class="person-image"><img alt="Foto de Camila Bartol" src="sources/img/portfolio_images/0.webp"></div><div class="about-text"><h3>Camila Bartol</h3><p>Licenciada en Comunicación con especialización en Publicidad y Marketing. Apasionada por crear contenido estratégico que potencia marcas y genera conexiones reales con su audiencia. Combina creatividad, análisis y planificación para lograr resultados efectivos.</p></div></div><div class="person-block"><div class="person-image"><img alt="Foto de Tomás Sexenian" src="sources/img/portfolio_images/1.webp"></div><div class="about-text"><h3>Tomás Sexenian</h3><p>Estudiante de Ingeniería en Sistemas (UdelaR) y profesional IT con experiencia local e internacional. Especializado en desarrollo web full-stack, sistemas de gestión y diseños a medida, enfocado en soluciones eficientes y escalables.</p></div></div></div></div></section><style>#nosotros{background-color:#1a1a1a}#nosotros .about-content{display:grid;grid-template-columns:1fr;gap:40px}.person-block{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}.person-image{width:150px;height:200px;flex-shrink:0;overflow:hidden;border-radius:8px;background-color:#333}.person-image img{width:100%;height:100%;object-fit:cover;display:block}#nosotros .about-text{flex:1}#nosotros .about-text h3{color:var(--color-dark-pink);margin-bottom:10px}#nosotros p{color:var(--color-grey);margin-bottom:0;font-size:.95rem}@media (min-width:768px){#nosotros .about-content{grid-template-columns:1fr 1fr;gap:50px}.person-block{flex-direction:row;text-align:left;align-items:flex-start;gap:30px}.person-image{width:120px;height:160px}}@media (min-width:992px){.person-image{width:150px;height:200px}}</style><section id="contacto"><div class="container"><h2 class="contact-heading"><span>Contáctanos</span></h2><div class="contact-info"><p class="contact-subtitle">¿Listo para impulsar tu marca?</p><div class="contact-details"><div class="contact-item email-item"><a class="contact-link email-link" href="mailto:bartol.marketing@gmail.com">bartol.marketing@gmail.com</a></div><div class="contact-item phone-item"><a class="contact-link" href="tel:+59892711562">(+598) 092 711 562</a></div><div class="contact-item whatsapp-item"><a class="whatsapp-button professional-button" href="https://wa.me/59892711562?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20marketing." rel="noopener noreferrer" target="_blank"><svg fill="currentColor" height="20" viewbox="0 0 448 512" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 .4c101.2 0 183.1 81.9 183.1 183.1 0 32.3-8.5 63.3-24.1 90.9L464 438.8l-76.3-19.9c-26.4 15.9-57.4 25.4-90.2 25.4h-.1c-101.2 0-183.1-81.9-183.1-183.1S122.6 114.3 223.9 114.3zm95.5 169.1c-6.1-3-36.2-17.9-41.9-19.9-5.7-2-9.8-3-13.9 3s-15.9 19.9-19.5 23.9-7.1 4.9-13.2 1.7c-6-.3-25.3-9.4-48.1-29.7-17.8-15.9-29.8-35.5-33.2-41.7s-.4-9.4 2.6-12.4c2.7-2.7 6.1-7.1 9.1-10.6 3-3.5 4-6.1 6.1-10.1 2.1-4 1.1-7.5-.5-10.6s-13.9-33.5-19-45.9c-5.1-12.4-10.3-10.6-14.4-10.8-3.9-.2-8.5-.2-13 .2s-11.7 1.7-17.8 8.3c-6.1 6.5-23.2 22.7-23.2 55.4 0 32.7 23.7 64.4 27 68.8 3.3 4.4 46.4 70.9 113.1 99.4 15.9 6.8 28.7 10.9 38.4 14 14.9 4.7 28.7 4 40.1 2.4 11.9-1.6 36.2-14.8 41.3-29.1 5.1-14.3 5.1-26.4 3.5-29.1-1.6-2.7-5.7-4.4-11.8-7.5z"></path></svg>Chatea por WhatsApp</a></div></div></div></div></section><style>:root{--color-black:#111111;--color-dark-pink:#F9C0D3;--color-white:#f4f4f4;--color-grey:#cccccc;--scrollbar-track:#333;--scrollbar-thumb:var(--color-dark-pink);--scrollbar-thumb-hover:#eab0c4;--whatsapp-green:#25D366;--whatsapp-green-hover:#1DAE54}#contacto{background-color:var(--color-black);padding:70px 0;text-align:center;position:relative;overflow:hidden}#contacto .container{position:relative;z-index:1}.contact-heading span{font-size:3.5rem;font-weight:700;color:var(--color-dark-pink);text-shadow:1px 1px 2px rgba(0,0,0,.5);display:inline-block;margin-bottom:20px}.contact-subtitle{font-size:1.4rem;color:var(--color-white);margin-bottom:45px!important;font-weight:300}#contacto .contact-details{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:30px;flex-wrap:wrap}.contact-item{font-size:1.1rem;color:var(--color-white)}.contact-link{color:var(--color-white);text-decoration:none;font-weight:400;transition:color .3s ease,transform .2s ease;display:inline-block;padding:3px 0;font-size:1.4rem;border-bottom:1px solid transparent}.contact-link:hover{color:var(--color-dark-pink);transform:translateY(-2px);border-bottom:1px solid var(--color-dark-pink)}.email-link{font-weight:500;font-size:1.6rem;color:var(--color-white);text-shadow:none;border-bottom:1px solid transparent}.email-link:hover{color:var(--color-dark-pink);text-shadow:none;border-bottom:1px solid var(--color-dark-pink);transform:translateY(-2px)}.phone-item .contact-link{font-size:1.3rem;color:var(--color-grey)}.phone-item .contact-link:hover{color:var(--color-dark-pink);border-bottom-color:transparent}.professional-button{display:inline-flex;align-items:center;gap:10px;background-color:var(--whatsapp-green);color:#fff!important;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:500;font-size:1.3rem;border:none;cursor:pointer;transition:background-color .3s ease,transform .2s ease,box-shadow .3s ease;box-shadow:0 2px 8px rgba(0,0,0,.3)}.professional-button svg{transition:transform .3s ease}.professional-button:hover{background-color:var(--whatsapp-green-hover);transform:translateY(-3px);box-shadow:0 4px 12px rgba(37,211,102,.4)}.professional-button:hover svg{transform:scale(1.1)}@media (max-width:768px){.contact-heading span{font-size:2.8rem}.contact-subtitle{font-size:1.1rem}.contact-link{font-size:1.2rem}.email-link{font-size:1.4rem}.professional-button{font-size:1.1rem;padding:12px 24px}#contacto .contact-details{gap:25px}}@media (max-width:480px){.contact-heading span{font-size:2.2rem}.contact-subtitle{font-size:1rem}.email-link{font-size:1.2rem}.professional-button{font-size:1rem;padding:10px 20px}}</style><footer><div class="container"><p>© 2025 Bartol Marketing. Todos los derechos reservados. Montevideo, Uruguay.</p></div></footer><script>const header = document.getElementById('main-header');
-        const nav = document.getElementById('main-nav');
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = nav.querySelectorAll('a');
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+<!-- Primary SEO -->
+<title>Bartol Marketing · Estudio creativo de marketing en Uruguay</title>
+<meta name="description" content="Estudio creativo de comunicación y marketing en Montevideo, Uruguay. Gestión de redes, creación de contenido, pauta en Meta y Google Ads y asesoramiento 1:1. Impulsamos tu marca o proyecto.">
+<meta name="keywords" content="marketing digital, agencia de marketing Uruguay, gestión de redes sociales, creación de contenido, community manager Montevideo, Meta Ads, Google Ads, branding, estrategia de marca, Bartol Marketing">
+<meta name="author" content="Bartol Marketing">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fde7ef" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://bartolmarketing.com/">
 
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bartol Marketing">
+<meta property="og:locale" content="es_UY">
+<meta property="og:title" content="Bartol Marketing · Estudio creativo de marketing en Uruguay">
+<meta property="og:description" content="Impulsamos tu marca o proyecto. Estrategia, creatividad y resultados: gestión de redes, contenido, pauta digital y asesoramiento 1:1 en Montevideo, Uruguay.">
+<meta property="og:url" content="https://bartolmarketing.com/">
+<meta property="og:image" content="https://bartolmarketing.com/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bartol Marketing — estudio creativo de marketing">
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const targetHref = link.getAttribute('href');
-                 if (targetHref && targetHref.startsWith('#')) {
-                     const targetElement = document.querySelector(targetHref);
-                     if (targetElement) {
-                         e.preventDefault();
-                         targetElement.scrollIntoView({ behavior: 'smooth' });
-                     }
-                 }
-                 if (nav.classList.contains('active')) {
-                    nav.classList.remove('active');
-                 }
-            });
-        });
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bartol Marketing · Estudio creativo de marketing en Uruguay">
+<meta name="twitter:description" content="Impulsamos tu marca o proyecto. Estrategia, creatividad y resultados en Montevideo, Uruguay.">
+<meta name="twitter:image" content="https://bartolmarketing.com/assets/img/og-image.png">
 
-        const sections = document.querySelectorAll('section');
-        const sectionOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
+<!-- Icons / manifest -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
-        const sectionObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, sectionOptions);
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=League+Spartan:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=League+Spartan:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap">
 
-        sections.forEach(section => {
-             sectionObserver.observe(section);
-        });
+<!-- Styles -->
+<link rel="stylesheet" href="/assets/css/styles.css">
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const carousels = document.querySelectorAll('.carousel-container');
-            const autoSlideInterval = 5000;
-            let timers = new Map();
+<!-- Set theme before paint to avoid flash -->
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('bartol-theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {}
+})();
+</script>
 
-            function checkImageOrientation(imgElement) {
-                 if (!imgElement.naturalWidth || !imgElement.naturalHeight) {
-                     return;
-                 }
-                 if (imgElement.naturalHeight > imgElement.naturalWidth) {
-                     imgElement.classList.add('vertical-image');
-                 } else {
-                     imgElement.classList.remove('vertical-image');
-                 }
-            }
+<!-- Structured data: LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Bartol Marketing",
+  "description": "Estudio creativo de comunicación y marketing digital en Montevideo, Uruguay.",
+  "url": "https://bartolmarketing.com/",
+  "image": "https://bartolmarketing.com/assets/img/og-image.png",
+  "logo": "https://bartolmarketing.com/assets/img/favicon/icon-512.png",
+  "email": "bartol.marketing@gmail.com",
+  "telephone": "+598-92-711-562",
+  "slogan": "Impulsamos tu marca o proyecto",
+  "priceRange": "$$",
+  "areaServed": { "@type": "Country", "name": "Uruguay" },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Montevideo",
+    "addressCountry": "UY"
+  },
+  "sameAs": [ "https://instagram.com/bartol.marketing" ],
+  "knowsAbout": [
+    "Gestión de redes sociales",
+    "Creación de contenido",
+    "Pauta en medios digitales",
+    "Meta Ads",
+    "Google Ads",
+    "Branding",
+    "Estrategia de marca"
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestión de redes sociales" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Creación de contenido" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pauta en medios digitales" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asesoramiento 1:1" } }
+  ]
+}
+</script>
+</head>
 
-            carousels.forEach((carousel) => {
-                const slides = carousel.querySelectorAll('.carousel-slide');
-                const images = carousel.querySelectorAll('.carousel-slide img');
-                const prevBtn = carousel.querySelector('.carousel-prev');
-                const nextBtn = carousel.querySelector('.carousel-next');
-                let currentSlideIndex = 0;
+<body>
+<a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
 
-                 images.forEach(img => {
-                    if (img.complete) {
-                        checkImageOrientation(img);
-                    } else {
-                        img.onload = () => checkImageOrientation(img);
-                    }
-                 });
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="#inicio" aria-label="Bartol Marketing — Inicio">
+      <span class="iso" aria-hidden="true">B<span class="iso__dot">.</span></span>
+      <span class="brand__name">Bartol Marketing</span>
+    </a>
 
-                function showSlide(carouselElement, slideIndex) {
-                    const carouselSlides = carouselElement.querySelectorAll('.carousel-slide');
-                    if (carouselSlides.length === 0) return 0;
-                    carouselSlides.forEach(slide => slide.classList.remove('active'));
-                    const newIndex = (slideIndex + carouselSlides.length) % carouselSlides.length;
-                    carouselSlides[newIndex].classList.add('active');
-                    return newIndex;
-                }
+    <nav class="nav" id="primary-nav" aria-label="Navegación principal">
+      <ul class="nav__list">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotr@s</a></li>
+        <li><a href="#contenido">Contenido</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
 
-                function nextSlideFunc(carouselElement) {
-                    const currentActive = carouselElement.querySelector('.carousel-slide.active');
-                    let currentIndex = currentActive ? Array.from(carouselElement.querySelectorAll('.carousel-slide')).indexOf(currentActive) : 0;
-                    return showSlide(carouselElement, currentIndex + 1);
-                 }
+    <div class="site-header__actions">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Cambiar entre modo día y noche">
+        <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">☀</span>
+        <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">☾</span>
+      </button>
+      <a class="btn btn--small btn--accent nav-cta" href="#contacto">Hablemos</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
 
-                function prevSlideFunc(carouselElement) {
-                     const currentActive = carouselElement.querySelector('.carousel-slide.active');
-                     let currentIndex = currentActive ? Array.from(carouselElement.querySelectorAll('.carousel-slide')).indexOf(currentActive) : 0;
-                     return showSlide(carouselElement, currentIndex - 1);
-                 }
+<main id="contenido-principal">
 
-                currentSlideIndex = showSlide(carousel, 0);
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+    </div>
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="hero__mark" aria-hidden="true">B<span class="iso__dot">.</span></span>
+        <p class="eyebrow">Estudio creativo · Montevideo, Uruguay</p>
+        <h1 class="hero__title">
+          Impulsamos tu <span class="u-pink">marca</span><br>o proyecto <span class="hero__rocket" aria-hidden="true">🚀</span>
+        </h1>
+        <p class="hero__lead">
+          Combinamos estrategia, diseño y contenido para construir marcas con
+          identidad, coherencia y propósito. Trabajamos cerca tuyo para
+          transformar ideas en proyectos que conecten con las personas.
+        </p>
+        <div class="hero__cta">
+          <a class="btn btn--accent" href="#contacto">Impulsá tu marca</a>
+          <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+      <span class="manuela hero__manuela" aria-hidden="true"></span>
+    </div>
+  </section>
 
-                if (prevBtn && nextBtn && slides.length > 1) {
-                    nextBtn.addEventListener('click', () => {
-                        currentSlideIndex = nextSlideFunc(carousel);
-                        resetTimer(carousel);
-                    });
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Estrategia <span class="marquee__dot">·</span> Creatividad <span class="marquee__dot">·</span> Resultados <span class="marquee__dot">·</span> </span>
+      <span>Estrategia <span class="marquee__dot">·</span> Creatividad <span class="marquee__dot">·</span> Resultados <span class="marquee__dot">·</span> </span>
+      <span>Estrategia <span class="marquee__dot">·</span> Creatividad <span class="marquee__dot">·</span> Resultados <span class="marquee__dot">·</span> </span>
+      <span>Estrategia <span class="marquee__dot">·</span> Creatividad <span class="marquee__dot">·</span> Resultados <span class="marquee__dot">·</span> </span>
+    </div>
+  </div>
 
-                    prevBtn.addEventListener('click', () => {
-                        currentSlideIndex = prevSlideFunc(carousel);
-                        resetTimer(carousel);
-                    });
-                } else if (slides.length <= 1) {
-                    if(prevBtn) prevBtn.style.display = 'none';
-                    if(nextBtn) nextBtn.style.display = 'none';
-                }
+  <!-- ============ SERVICIOS ============ -->
+  <section class="section services" id="servicios">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="section__num">01</span>
+        <h2 class="section__title">Servicios<span class="u-pink">.</span></h2>
+        <p class="section__intro">
+          Pensamos cada acción desde la estrategia. Estos son los servicios con
+          los que llevamos tu marca al siguiente nivel.
+        </p>
+      </header>
 
-                function startTimer(carouselElement) {
-                    if (timers.has(carouselElement)) {
-                       clearInterval(timers.get(carouselElement));
-                       timers.delete(carouselElement);
-                    }
-                     if (carouselElement.querySelectorAll('.carousel-slide').length > 1) {
-                         let timerId = setInterval(() => {
-                            nextSlideFunc(carouselElement);
-                        }, autoSlideInterval);
-                        timers.set(carouselElement, timerId);
-                    }
-                }
+      <ol class="service-list">
+        <li class="service reveal">
+          <button class="service__row" type="button" aria-expanded="false">
+            <span class="service__index" aria-hidden="true">01</span>
+            <span class="service__name">Gestión de redes</span>
+            <span class="service__plus" aria-hidden="true"></span>
+          </button>
+          <div class="service__panel">
+            <p>Nos encargamos de gestionar tu presencia en Instagram, Facebook,
+            LinkedIn y TikTok. Desde la planificación del contenido hasta la
+            publicación, gestionamos cada detalle con un enfoque estratégico.
+            A partir de la estrategia buscamos transmitir la esencia y los
+            valores de tu marca, sin perder de vista tu objetivo.</p>
+          </div>
+        </li>
+        <li class="service reveal">
+          <button class="service__row" type="button" aria-expanded="false">
+            <span class="service__index" aria-hidden="true">02</span>
+            <span class="service__name">Creación de contenido</span>
+            <span class="service__plus" aria-hidden="true"></span>
+          </button>
+          <div class="service__panel">
+            <p>Generamos contenido que va desde lo orgánico hasta producciones de
+            foto y video. Todo lo que hacemos tiene un objetivo claro: transmitir
+            la esencia de tu marca, siempre guiada por una estrategia, para que
+            sea lo más eficiente y adaptado a su personalidad.</p>
+          </div>
+        </li>
+        <li class="service reveal">
+          <button class="service__row" type="button" aria-expanded="false">
+            <span class="service__index" aria-hidden="true">03</span>
+            <span class="service__name">Pauta en medios digitales</span>
+            <span class="service__plus" aria-hidden="true"></span>
+          </button>
+          <div class="service__panel">
+            <p>Ofrecemos servicios de pauta y análisis en medios digitales para
+            potenciar tu marca. Diseñamos campañas efectivas, segmentadas y
+            optimizadas, utilizando el menor presupuesto posible. Siempre desde un
+            enfoque estratégico, para que cada anuncio hable directamente con tu
+            público objetivo. <strong>Google Ads y Meta Ads.</strong></p>
+          </div>
+        </li>
+        <li class="service reveal">
+          <button class="service__row" type="button" aria-expanded="false">
+            <span class="service__index" aria-hidden="true">04</span>
+            <span class="service__name">Asesoramiento 1:1</span>
+            <span class="service__plus" aria-hidden="true"></span>
+          </button>
+          <div class="service__panel">
+            <p>Ofrecemos asesorías personalizadas para guiarte en el desarrollo de
+            tu marca. Trabajamos juntos para entender tus objetivos y diseñar una
+            estrategia de comunicación efectiva.</p>
+          </div>
+        </li>
+      </ol>
 
-                function resetTimer(carouselElement) {
-                    startTimer(carouselElement);
-                }
+      <div class="other-services reveal">
+        <h3 class="other-services__title">Otros servicios</h3>
+        <ul class="chips">
+          <li class="chip">Moderación de comentarios y mensajes</li>
+          <li class="chip">Cobertura de eventos</li>
+          <li class="chip">Gestión de influencers</li>
+          <li class="chip">Diseño de branding</li>
+          <li class="chip">Campañas creativas</li>
+          <li class="chip">Diseño e implementación web</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-                startTimer(carousel);
-            });
-        });</script></body></html>
+  <!-- ============ NOSOTR@S ============ -->
+  <section class="section about" id="nosotros">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="section__num">02</span>
+        <h2 class="section__title">Nosotr@s<span class="u-pink">.</span></h2>
+      </header>
+
+      <div class="about__statement reveal">
+        <p class="about__lead">
+          En <strong>bartol.marketing</strong> creemos que cada marca tiene una
+          historia, una personalidad y algo único para decir. Nuestro trabajo es
+          encontrar la mejor forma de contarlo.
+        </p>
+        <p>
+          Somos un estudio creativo de comunicación y marketing que combina
+          estrategia, diseño y contenido para construir marcas con identidad,
+          coherencia y propósito. No buscamos seguir fórmulas: trabajamos de forma
+          cercana y personalizada para transformar ideas en proyectos que conecten
+          con las personas.
+        </p>
+        <p>
+          Porque detrás de cada marca hay mucho más que un logo o una publicación:
+          hay una esencia que merece ser descubierta y potenciada.
+        </p>
+      </div>
+
+      <div class="team">
+        <article class="team__member reveal">
+          <div class="team__photo">
+            <img src="/assets/img/team/camila.webp" alt="Retrato de Camila Bartol" width="300" height="400" loading="lazy">
+          </div>
+          <h3 class="team__name">Camila Bartol</h3>
+          <p class="team__role">Estrategia &amp; Contenido</p>
+          <p class="team__bio">
+            Licenciada en Comunicación con especialización en Publicidad y
+            Marketing. Apasionada por crear contenido estratégico que potencia
+            marcas y genera conexiones reales con su audiencia.
+          </p>
+        </article>
+        <article class="team__member reveal">
+          <div class="team__photo">
+            <img src="/assets/img/team/tomas.webp" alt="Retrato de Tomás Sexenian" width="300" height="400" loading="lazy">
+          </div>
+          <h3 class="team__name">Tomás Sexenian</h3>
+          <p class="team__role">Desarrollo &amp; Web</p>
+          <p class="team__bio">
+            Estudiante de Ingeniería en Sistemas (UdelaR) y profesional IT con
+            experiencia local e internacional. Especializado en desarrollo web
+            full-stack y soluciones a medida, eficientes y escalables.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLIENTES / PROYECTOS ============ -->
+  <section class="section work" id="clientes">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="section__num">03</span>
+        <h2 class="section__title">Clientes<span class="u-pink">.</span></h2>
+        <p class="section__intro">
+          Marcas que confiaron en nosotros y los resultados que construimos juntos.
+        </p>
+      </header>
+
+      <div class="work-grid" id="work-grid">
+
+        <article class="project project--featured reveal" data-carousel>
+          <div class="project__media">
+            <div class="carousel" data-interval="5200">
+              <ul class="carousel__track">
+                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/36.webp" alt="DELUNO — pieza de contenido 1" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/37.webp" alt="DELUNO — pieza de contenido 2" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/34.webp" alt="DELUNO — pieza de contenido 3" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/35.webp" alt="DELUNO — pieza de contenido 4" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/41.webp" alt="DELUNO — pieza de contenido 5" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/42.webp" alt="DELUNO — pieza de contenido 6" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/44.webp" alt="DELUNO — pieza de contenido 7" loading="lazy"></li>
+              </ul>
+              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
+              <div class="carousel__dots" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="project__body">
+            <div class="project__tags"><span class="tag">Mascotas</span><span class="tag">Redes</span><span class="tag">E-commerce</span></div>
+            <h3 class="project__name">Deluno</h3>
+            <p>Importación y distribución de productos premium para mascotas en
+            Uruguay, con tres marcas: <strong>La Mascota</strong> (tienda y
+            veterinaria), <strong>Deluno</strong> (accesorios y alimentos premium)
+            y <strong>Bravery</strong> (alimento monoproteico grain-free).</p>
+            <p class="project__result">Estrategia de contenido coherente que
+            impulsó la interacción, el posicionamiento y las ventas físicas y
+            online.</p>
+          </div>
+        </article>
+
+        <article class="project project--featured reveal" data-carousel>
+          <div class="project__media">
+            <div class="carousel" data-interval="4800">
+              <ul class="carousel__track">
+                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/21.webp" alt="Magnolias — pieza de contenido 1" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/22.webp" alt="Magnolias — pieza de contenido 2" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/23.webp" alt="Magnolias — pieza de contenido 3" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/24.webp" alt="Magnolias — pieza de contenido 4" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/25.webp" alt="Magnolias — pieza de contenido 5" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/28.webp" alt="Magnolias — pieza de contenido 6" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/29.webp" alt="Magnolias — pieza de contenido 7" loading="lazy"></li>
+              </ul>
+              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
+              <div class="carousel__dots" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="project__body">
+            <div class="project__tags"><span class="tag">Belleza</span><span class="tag">Bienestar</span><span class="tag">Lanzamientos</span></div>
+            <h3 class="project__name">Magnolias</h3>
+            <p>Centro de belleza y bienestar. Acompañamos lanzamientos como
+            <strong>Primelase</strong> (depilación láser), Exion, Bride Plans y
+            más, combinando promociones, campañas digitales y marketing
+            tradicional.</p>
+            <p class="project__result">Excelentes resultados en los lanzamientos,
+            especialmente Primelase.</p>
+          </div>
+        </article>
+
+        <article class="project reveal" data-carousel>
+          <div class="project__media">
+            <div class="carousel" data-interval="5600">
+              <ul class="carousel__track">
+                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/5.webp" alt="Orange Revestimientos — pieza 1" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/6.webp" alt="Orange Revestimientos — pieza 2" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/7.webp" alt="Orange Revestimientos — pieza 3" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/8.webp" alt="Orange Revestimientos — pieza 4" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/9.webp" alt="Orange Revestimientos — pieza 5" loading="lazy"></li>
+              </ul>
+              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
+              <div class="carousel__dots" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="project__body">
+            <div class="project__tags"><span class="tag">Diseño de hogar</span><span class="tag">Branding</span></div>
+            <h3 class="project__name">Orange Revestimientos</h3>
+            <p class="project__result">Modernizamos la imagen de la marca para
+            reflejar su crecimiento y visión innovadora, con una identidad
+            coherente y actualizada.</p>
+          </div>
+        </article>
+
+        <article class="project reveal" data-carousel>
+          <div class="project__media">
+            <div class="carousel" data-interval="6000">
+              <ul class="carousel__track">
+                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/10.webp" alt="Risqué — pieza 1" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/11.webp" alt="Risqué — pieza 2" loading="lazy"></li>
+              </ul>
+              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
+              <div class="carousel__dots" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="project__body">
+            <div class="project__tags"><span class="tag">Indumentaria</span><span class="tag">Redes</span></div>
+            <h3 class="project__name">Risqué</h3>
+            <p class="project__result">Posicionamiento en redes destacando productos
+            y diferenciadores, con un feed atractivo y dinámico que generó más
+            reconocimiento y fidelización.</p>
+          </div>
+        </article>
+
+        <article class="project reveal" data-carousel>
+          <div class="project__media">
+            <div class="carousel" data-interval="5400">
+              <ul class="carousel__track">
+                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/14.webp" alt="Sleep — pieza 1" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/15.webp" alt="Sleep — pieza 2" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/16.webp" alt="Sleep — pieza 3" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/17.webp" alt="Sleep — pieza 4" loading="lazy"></li>
+              </ul>
+              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
+              <div class="carousel__dots" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="project__body">
+            <div class="project__tags"><span class="tag">Belleza consciente</span><span class="tag">Sostenibilidad</span></div>
+            <h3 class="project__name">Sleep</h3>
+            <p class="project__result">Identidad visual alineada a sus valores de
+            sostenibilidad y bienestar, con una presencia digital coherente.</p>
+          </div>
+        </article>
+
+        <article class="project reveal" data-carousel>
+          <div class="project__media">
+            <div class="carousel" data-interval="5800">
+              <ul class="carousel__track">
+                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/19.webp" alt="Nutrición Romina Lucero — pieza 1" loading="lazy"></li>
+                <li class="carousel__slide"><img src="/assets/img/portfolio/20.webp" alt="Nutrición Romina Lucero — pieza 2" loading="lazy"></li>
+              </ul>
+              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
+              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
+              <div class="carousel__dots" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="project__body">
+            <div class="project__tags"><span class="tag">Nutrición</span><span class="tag">Contenido</span></div>
+            <h3 class="project__name">Nutrición Romina Lucero</h3>
+            <p class="project__result">Profesionalización de los posteos y un
+            calendario de contenidos alineado a la estacionalidad, asegurando
+            coherencia.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTENIDO / CARRETE ============ -->
+  <section class="section reel" id="contenido">
+    <div class="container">
+      <header class="section__head reveal">
+        <span class="section__num">04</span>
+        <h2 class="section__title">Nuestro carrete<span class="u-pink">.</span></h2>
+        <p class="section__intro">
+          Un poco de todo lo que estuvimos creando últimamente.
+          <a href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener">Seguinos en Instagram&nbsp;↗</a>
+        </p>
+      </header>
+
+      <div class="reel-grid reveal">
+        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/23.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
+        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/8.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
+        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/41.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
+        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/28.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
+        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/17.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
+        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/9.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
+        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/37.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
+        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/24.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACTO ============ -->
+  <section class="section contact" id="contacto">
+    <div class="container contact__inner">
+      <div class="contact__intro reveal">
+        <span class="section__num">05</span>
+        <h2 class="contact__title">¿List@ para<br>impulsar tu <span class="u-pink">marca</span>?</h2>
+        <p class="contact__lead">Contanos qué necesitás y te respondemos a la brevedad.
+        Sin vueltas, con estrategia.</p>
+
+        <ul class="contact__details">
+          <li>
+            <span class="contact__label">Email</span>
+            <a href="mailto:bartol.marketing@gmail.com">bartol.marketing@gmail.com</a>
+          </li>
+          <li>
+            <span class="contact__label">Teléfono</span>
+            <a href="tel:+59892711562">(+598) 092 711 562</a>
+          </li>
+          <li>
+            <span class="contact__label">Dónde</span>
+            <span>Montevideo, Uruguay</span>
+          </li>
+        </ul>
+
+        <a class="btn btn--whatsapp" href="https://wa.me/59892711562?text=Hola%20Bartol%20Marketing%2C%20quiero%20impulsar%20mi%20marca." target="_blank" rel="noopener">
+          <svg viewBox="0 0 32 32" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.12.56 4.18 1.6 6L4 29l8.16-1.54a12 12 0 0 0 3.88.64C22.68 28.1 28 22.7 28 16.06 28 9.42 22.68 4.02 16.04 4.02V3zm0 2.2c5.43 0 9.84 4.42 9.84 9.86 0 5.44-4.41 9.86-9.84 9.86-1.2 0-2.38-.22-3.5-.66l-.25-.1-4.84.92.92-4.72-.16-.25a9.8 9.8 0 0 1-1.5-5.2c0-5.44 4.4-9.86 9.83-9.86zm-3.7 4.96c-.18 0-.46.07-.7.33-.24.26-.92.9-.92 2.2s.94 2.55 1.07 2.73c.13.18 1.85 2.95 4.6 4.02 2.27.9 2.73.72 3.22.67.5-.04 1.6-.65 1.83-1.28.22-.63.22-1.17.16-1.28-.07-.11-.24-.18-.5-.31-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.6.13-.18.26-.7.88-.85 1.06-.16.18-.31.2-.58.07-.27-.13-1.13-.42-2.16-1.33-.8-.71-1.34-1.59-1.5-1.85-.15-.26-.01-.4.12-.53.12-.12.27-.31.4-.46.14-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.6-1.45-.82-1.98-.22-.52-.44-.45-.6-.46h-.51z"/></svg>
+          Escribinos por WhatsApp
+        </a>
+      </div>
+
+      <form class="contact__form reveal" id="contact-form" novalidate>
+        <div class="field">
+          <label for="cf-name">Nombre y empresa</label>
+          <input type="text" id="cf-name" name="name" autocomplete="name" required placeholder="Tu nombre / tu marca">
+        </div>
+        <div class="field">
+          <label for="cf-email">Email</label>
+          <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
+        </div>
+        <div class="field">
+          <label for="cf-service">¿Qué servicio estás buscando?</label>
+          <div class="select-wrap">
+            <select id="cf-service" name="service" required>
+              <option value="" selected disabled>Elegí una opción</option>
+              <option>Gestión de redes</option>
+              <option>Creación de contenido</option>
+              <option>Pauta en medios digitales (Meta / Google Ads)</option>
+              <option>Asesoramiento 1:1</option>
+              <option>Diseño de branding</option>
+              <option>Diseño e implementación web</option>
+              <option>Otro / No estoy seguro</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cf-message">Mensaje</label>
+          <textarea id="cf-message" name="message" rows="4" placeholder="Contanos un poco sobre tu proyecto…"></textarea>
+        </div>
+        <button class="btn btn--accent btn--block" type="submit">Enviar por WhatsApp</button>
+        <p class="contact__form-alt">o <button type="button" class="link-button" id="send-email">enviarlo por email</button></p>
+        <p class="contact__form-note" id="form-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <span class="manuela contact__manuela" aria-hidden="true"></span>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <a class="footer-lockup" href="#inicio" aria-label="Bartol Marketing — Inicio">
+        <span class="footer-lockup__bartol">Bartol</span>
+        <span class="footer-lockup__marketing">Marketing</span>
+      </a>
+      <nav class="footer-nav" aria-label="Navegación del pie">
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Nosotr@s</a>
+        <a href="#contenido">Contenido</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener" aria-label="Instagram de Bartol Marketing">Instagram ↗</a>
+        <a href="https://wa.me/59892711562" target="_blank" rel="noopener" aria-label="WhatsApp de Bartol Marketing">WhatsApp ↗</a>
+        <a href="mailto:bartol.marketing@gmail.com" aria-label="Email de Bartol Marketing">Email ↗</a>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <p>© <span id="year">2026</span> Bartol Marketing — Montevideo, Uruguay.</p>
+      <p class="site-footer__tagline">Estrategia. Creatividad. Resultados.</p>
+    </div>
+  </div>
+  <span class="manuela site-footer__manuela" aria-hidden="true"></span>
+</footer>
+
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

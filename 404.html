@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada · Bartol Marketing</title>
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fde7ef" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=League+Spartan:wght@600;700;800&family=Outfit:wght@300;400;500;600&display=swap">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('bartol-theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  } catch (e) {}
+})();
+</script>
+<style>
+  .err { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 2rem var(--gutter); position: relative; overflow: hidden; }
+  .err__bg { position: absolute; inset: 0; pointer-events: none; }
+  .err__inner { position: relative; z-index: 1; max-width: 620px; }
+  .err__code { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(6rem, 26vw, 16rem); line-height: .82; letter-spacing: .01em; }
+  .err__code .u-pink { color: var(--accent-strong); }
+  .err__title { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(1.6rem, 5vw, 3rem); line-height: 1; margin: .6rem 0 1rem; }
+  .err__text { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2rem; }
+  .err__manuela { --size: clamp(150px, 26vw, 230px); width: var(--size); height: calc(var(--size) * 1.24); margin: 0 auto 1.4rem; }
+</style>
+</head>
+<body>
+  <main class="err">
+    <div class="err__bg" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+    </div>
+    <div class="err__inner">
+      <span class="manuela err__manuela" aria-hidden="true" style="-webkit-mask-image:url('/assets/img/manuela/manuela-pensive.png');mask-image:url('/assets/img/manuela/manuela-pensive.png')"></span>
+      <p class="eyebrow">Error 404</p>
+      <h1 class="err__code">4<span class="u-pink">0</span>4</h1>
+      <p class="err__title">Esta página se fue de paseo<span class="u-pink">.</span></p>
+      <p class="err__text">No encontramos lo que buscabas, pero Manuela te lleva de vuelta al inicio.</p>
+      <a class="btn btn--accent" href="/">Volver al inicio</a>
+    </div>
+  </main>
+</body>
+</html>

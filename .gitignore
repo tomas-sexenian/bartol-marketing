@@ -338,3 +338,10 @@ pyrightconfig.json
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,pycharm,python,macos
+
+### Local preview / screenshot artifacts (Claude Code) ###
+.playwright-mcp/
+/*.jpeg
+/01-hero-dark.png
+/screenshots/
+.claude/
