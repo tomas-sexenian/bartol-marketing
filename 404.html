@@ -27,7 +27,8 @@
   .err { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 2rem var(--gutter); position: relative; overflow: hidden; }
   .err__bg { position: absolute; inset: 0; pointer-events: none; }
   .err__inner { position: relative; z-index: 1; max-width: 620px; }
-  .err__code { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(6rem, 26vw, 16rem); line-height: .82; letter-spacing: .01em; }
+  .err__eyebrow { position: relative; z-index: 1; margin-bottom: 1.2rem; }
+  .err__code { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(6rem, 26vw, 16rem); line-height: .9; letter-spacing: .01em; }
   .err__code .u-pink { color: var(--accent-strong); }
   .err__title { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(1.6rem, 5vw, 3rem); line-height: 1; margin: .6rem 0 1rem; }
   .err__text { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 2rem; }
@@ -42,7 +43,7 @@
     </div>
     <div class="err__inner">
       <span class="manuela err__manuela" aria-hidden="true" style="-webkit-mask-image:url('/assets/img/manuela/manuela-pensive.png');mask-image:url('/assets/img/manuela/manuela-pensive.png')"></span>
-      <p class="eyebrow">Error 404</p>
+      <p class="eyebrow err__eyebrow">Error 404</p>
       <h1 class="err__code">4<span class="u-pink">0</span>4</h1>
       <p class="err__title">Esta página se fue de paseo<span class="u-pink">.</span></p>
       <p class="err__text">No encontramos lo que buscabas, pero Manuela te lleva de vuelta al inicio.</p>
