@@ -79,7 +79,7 @@
     "addressLocality": "Montevideo",
     "addressCountry": "UY"
   },
-  "sameAs": [ "https://instagram.com/bartol.marketing" ],
+  "sameAs": [ "https://www.instagram.com/bartol.marketing/", "https://www.youtube.com/@Bartol.marketing" ],
   "knowsAbout": [
     "Gestión de redes sociales",
     "Creación de contenido",
@@ -106,7 +106,8 @@
 <header class="site-header" id="site-header">
   <div class="container site-header__inner">
     <a class="brand" href="#inicio" aria-label="Bartol Marketing — Inicio">
-      <span class="iso" aria-hidden="true">B<span class="iso__dot">.</span></span>
+      <img class="brand__iso brand__iso--dark" src="/assets/img/brand/isotipo-dark-t.png" alt="" aria-hidden="true" width="378" height="516">
+      <img class="brand__iso brand__iso--light" src="/assets/img/brand/isotipo-light-t.png" alt="" aria-hidden="true" width="378" height="516">
       <span class="brand__name">Bartol Marketing</span>
     </a>
 
@@ -143,16 +144,12 @@
     </div>
     <div class="container hero__inner">
       <div class="hero__content">
-        <span class="hero__mark" aria-hidden="true">B<span class="iso__dot">.</span></span>
-        <p class="eyebrow">Estudio creativo · Montevideo, Uruguay</p>
+        <img class="hero__mark hero__mark--dark" src="/assets/img/brand/vertical-dark-t.png" alt="Bartol Marketing" width="385" height="522" fetchpriority="high">
+        <img class="hero__mark hero__mark--light" src="/assets/img/brand/vertical-light-t.png" alt="Bartol Marketing" width="385" height="522" fetchpriority="high">
+        <p class="eyebrow">Agencia de marketing digital&nbsp;&nbsp;|&nbsp;&nbsp;Montevideo, Uruguay</p>
         <h1 class="hero__title">
-          Impulsamos tu <span class="u-pink">marca</span><br>o proyecto <span class="hero__rocket" aria-hidden="true">🚀</span>
+          Impulsamos<br>tu <span class="u-pink">marca</span> o<br>proyecto <span class="hero__rocket" aria-hidden="true">🚀</span>
         </h1>
-        <p class="hero__lead">
-          Combinamos estrategia, diseño y contenido para construir marcas con
-          identidad, coherencia y propósito. Trabajamos cerca tuyo para
-          transformar ideas en proyectos que conecten con las personas.
-        </p>
         <div class="hero__cta">
           <a class="btn btn--accent" href="#contacto">Impulsá tu marca</a>
           <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
@@ -280,33 +277,6 @@
           hay una esencia que merece ser descubierta y potenciada.
         </p>
       </div>
-
-      <div class="team">
-        <article class="team__member reveal">
-          <div class="team__photo">
-            <img src="/assets/img/team/camila.webp" alt="Retrato de Camila Bartol" width="300" height="400" loading="lazy">
-          </div>
-          <h3 class="team__name">Camila Bartol</h3>
-          <p class="team__role">Estrategia &amp; Contenido</p>
-          <p class="team__bio">
-            Licenciada en Comunicación con especialización en Publicidad y
-            Marketing. Apasionada por crear contenido estratégico que potencia
-            marcas y genera conexiones reales con su audiencia.
-          </p>
-        </article>
-        <article class="team__member reveal">
-          <div class="team__photo">
-            <img src="/assets/img/team/tomas.webp" alt="Retrato de Tomás Sexenian" width="300" height="400" loading="lazy">
-          </div>
-          <h3 class="team__name">Tomás Sexenian</h3>
-          <p class="team__role">Desarrollo &amp; Web</p>
-          <p class="team__bio">
-            Estudiante de Ingeniería en Sistemas (UdelaR) y profesional IT con
-            experiencia local e internacional. Especializado en desarrollo web
-            full-stack y soluciones a medida, eficientes y escalables.
-          </p>
-        </article>
-      </div>
     </div>
   </section>
 
@@ -323,21 +293,10 @@
 
       <div class="work-grid" id="work-grid">
 
-        <article class="project project--featured reveal" data-carousel>
+        <article class="project project--featured reveal">
           <div class="project__media">
-            <div class="carousel" data-interval="5200">
-              <ul class="carousel__track">
-                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/36.webp" alt="DELUNO — pieza de contenido 1" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/37.webp" alt="DELUNO — pieza de contenido 2" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/34.webp" alt="DELUNO — pieza de contenido 3" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/35.webp" alt="DELUNO — pieza de contenido 4" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/41.webp" alt="DELUNO — pieza de contenido 5" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/42.webp" alt="DELUNO — pieza de contenido 6" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/44.webp" alt="DELUNO — pieza de contenido 7" loading="lazy"></li>
-              </ul>
-              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
-              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
-              <div class="carousel__dots" aria-hidden="true"></div>
+            <div class="project__plaque project__plaque--deluno">
+              <img src="/assets/img/clients/deluno.png" alt="Logo de Deluno" loading="lazy">
             </div>
           </div>
           <div class="project__body">
@@ -353,21 +312,10 @@
           </div>
         </article>
 
-        <article class="project project--featured reveal" data-carousel>
+        <article class="project project--featured project--reverse reveal">
           <div class="project__media">
-            <div class="carousel" data-interval="4800">
-              <ul class="carousel__track">
-                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/21.webp" alt="Magnolias — pieza de contenido 1" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/22.webp" alt="Magnolias — pieza de contenido 2" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/23.webp" alt="Magnolias — pieza de contenido 3" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/24.webp" alt="Magnolias — pieza de contenido 4" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/25.webp" alt="Magnolias — pieza de contenido 5" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/28.webp" alt="Magnolias — pieza de contenido 6" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/29.webp" alt="Magnolias — pieza de contenido 7" loading="lazy"></li>
-              </ul>
-              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
-              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
-              <div class="carousel__dots" aria-hidden="true"></div>
+            <div class="project__plaque project__plaque--magnolias">
+              <img src="/assets/img/clients/magnolias.png" alt="Logo de Magnolias Beauty &amp; Spa" loading="lazy">
             </div>
           </div>
           <div class="project__body">
@@ -382,88 +330,17 @@
           </div>
         </article>
 
-        <article class="project reveal" data-carousel>
+        <article class="project project--featured reveal">
           <div class="project__media">
-            <div class="carousel" data-interval="5600">
-              <ul class="carousel__track">
-                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/5.webp" alt="Orange Revestimientos — pieza 1" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/6.webp" alt="Orange Revestimientos — pieza 2" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/7.webp" alt="Orange Revestimientos — pieza 3" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/8.webp" alt="Orange Revestimientos — pieza 4" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/9.webp" alt="Orange Revestimientos — pieza 5" loading="lazy"></li>
-              </ul>
-              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
-              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
-              <div class="carousel__dots" aria-hidden="true"></div>
-            </div>
-          </div>
-          <div class="project__body">
-            <div class="project__tags"><span class="tag">Diseño de hogar</span><span class="tag">Branding</span></div>
-            <h3 class="project__name">Orange Revestimientos</h3>
-            <p class="project__result">Modernizamos la imagen de la marca para
-            reflejar su crecimiento y visión innovadora, con una identidad
-            coherente y actualizada.</p>
-          </div>
-        </article>
-
-        <article class="project reveal" data-carousel>
-          <div class="project__media">
-            <div class="carousel" data-interval="6000">
-              <ul class="carousel__track">
-                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/10.webp" alt="Risqué — pieza 1" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/11.webp" alt="Risqué — pieza 2" loading="lazy"></li>
-              </ul>
-              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
-              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
-              <div class="carousel__dots" aria-hidden="true"></div>
-            </div>
-          </div>
-          <div class="project__body">
-            <div class="project__tags"><span class="tag">Indumentaria</span><span class="tag">Redes</span></div>
-            <h3 class="project__name">Risqué</h3>
-            <p class="project__result">Posicionamiento en redes destacando productos
-            y diferenciadores, con un feed atractivo y dinámico que generó más
-            reconocimiento y fidelización.</p>
-          </div>
-        </article>
-
-        <article class="project reveal" data-carousel>
-          <div class="project__media">
-            <div class="carousel" data-interval="5400">
-              <ul class="carousel__track">
-                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/14.webp" alt="Sleep — pieza 1" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/15.webp" alt="Sleep — pieza 2" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/16.webp" alt="Sleep — pieza 3" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/17.webp" alt="Sleep — pieza 4" loading="lazy"></li>
-              </ul>
-              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
-              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
-              <div class="carousel__dots" aria-hidden="true"></div>
-            </div>
-          </div>
-          <div class="project__body">
-            <div class="project__tags"><span class="tag">Belleza consciente</span><span class="tag">Sostenibilidad</span></div>
-            <h3 class="project__name">Sleep</h3>
-            <p class="project__result">Identidad visual alineada a sus valores de
-            sostenibilidad y bienestar, con una presencia digital coherente.</p>
-          </div>
-        </article>
-
-        <article class="project reveal" data-carousel>
-          <div class="project__media">
-            <div class="carousel" data-interval="5800">
-              <ul class="carousel__track">
-                <li class="carousel__slide is-active"><img src="/assets/img/portfolio/19.webp" alt="Nutrición Romina Lucero — pieza 1" loading="lazy"></li>
-                <li class="carousel__slide"><img src="/assets/img/portfolio/20.webp" alt="Nutrición Romina Lucero — pieza 2" loading="lazy"></li>
-              </ul>
-              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Imagen anterior">‹</button>
-              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Imagen siguiente">›</button>
-              <div class="carousel__dots" aria-hidden="true"></div>
+            <div class="project__photo">
+              <img src="/assets/img/clients/romina.webp" alt="Romina Lucero, nutricionista" loading="lazy">
             </div>
           </div>
           <div class="project__body">
             <div class="project__tags"><span class="tag">Nutrición</span><span class="tag">Contenido</span></div>
             <h3 class="project__name">Nutrición Romina Lucero</h3>
+            <p>Acompañamos a <strong>Romina Lucero</strong>, nutricionista, en la
+            construcción de su marca personal y su comunicación en redes.</p>
             <p class="project__result">Profesionalización de los posteos y un
             calendario de contenidos alineado a la estacionalidad, asegurando
             coherencia.</p>
@@ -482,19 +359,20 @@
         <h2 class="section__title">Nuestro carrete<span class="u-pink">.</span></h2>
         <p class="section__intro">
           Un poco de todo lo que estuvimos creando últimamente.
-          <a href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener">Seguinos en Instagram&nbsp;↗</a>
+          <a href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener">Instagram&nbsp;↗</a>
+          <a href="https://www.youtube.com/@Bartol.marketing" target="_blank" rel="noopener">YouTube&nbsp;↗</a>
         </p>
       </header>
 
       <div class="reel-grid reveal">
-        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/23.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
-        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/8.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
-        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/41.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
-        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/28.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
-        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/17.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
-        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/9.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
-        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/37.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
-        <a class="reel__item" href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener"><img src="/assets/img/portfolio/24.webp" alt="Contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">Ver ↗</span></a>
+        <a class="reel__item" href="https://www.youtube.com/@Bartol.marketing" target="_blank" rel="noopener" data-platform="youtube"><img src="/assets/img/reel/reel-01.webp" alt="Producción de contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">YouTube ↗</span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-04.webp" alt="Contenido de Bartol Marketing para La Mascota" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram ↗</span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-03.webp" alt="Contenido de Bartol Marketing para Bravery" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram ↗</span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-07.webp" alt="Contenido de Bartol Marketing para Bauta" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram ↗</span></a>
+        <a class="reel__item" href="https://www.youtube.com/@Bartol.marketing" target="_blank" rel="noopener" data-platform="youtube"><img src="/assets/img/reel/reel-06.webp" alt="Detrás de cámaras de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">YouTube ↗</span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-05.webp" alt="Contenido de Bartol Marketing para La Mascota" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram ↗</span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-09.webp" alt="Contenido de Bartol Marketing para Bauta" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram ↗</span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-02.webp" alt="Producción de contenido de nutrición" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram ↗</span></a>
       </div>
     </div>
   </section>
@@ -584,7 +462,8 @@
         <a href="#contacto">Contacto</a>
       </nav>
       <div class="footer-social">
-        <a href="https://instagram.com/bartol.marketing" target="_blank" rel="noopener" aria-label="Instagram de Bartol Marketing">Instagram ↗</a>
+        <a href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" aria-label="Instagram de Bartol Marketing">Instagram ↗</a>
+        <a href="https://www.youtube.com/@Bartol.marketing" target="_blank" rel="noopener" aria-label="YouTube de Bartol Marketing">YouTube ↗</a>
         <a href="https://wa.me/59892711562" target="_blank" rel="noopener" aria-label="WhatsApp de Bartol Marketing">WhatsApp ↗</a>
         <a href="mailto:bartol.marketing@gmail.com" aria-label="Email de Bartol Marketing">Email ↗</a>
       </div>
