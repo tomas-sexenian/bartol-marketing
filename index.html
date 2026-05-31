@@ -32,12 +32,12 @@
 <meta name="twitter:description" content="Impulsamos tu marca o proyecto. Estrategia, creatividad y resultados en Montevideo, Uruguay.">
 <meta name="twitter:image" content="https://bartolmarketing.com/assets/img/og-image.png">
 
-<!-- Icons / manifest -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16.png">
-<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
+<!-- Icons / manifest (versioned to bust Chrome's favicon cache) -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32.png?v=4">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16.png?v=4">
+<link rel="icon" href="/favicon.ico?v=4" sizes="any">
+<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png?v=4">
+<link rel="manifest" href="/site.webmanifest?v=4">
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +46,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=League+Spartan:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap">
 
 <!-- Styles -->
-<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="stylesheet" href="/assets/css/styles.css?v=4">
 
 <!-- Set theme before paint to avoid flash -->
 <script>
@@ -148,14 +148,16 @@
         <img class="hero__mark hero__mark--light" src="/assets/img/brand/vertical-light-t.png" alt="Bartol Marketing" width="385" height="522" fetchpriority="high">
         <p class="eyebrow">Agencia de marketing digital&nbsp;&nbsp;|&nbsp;&nbsp;Montevideo, Uruguay</p>
         <h1 class="hero__title">
-          Impulsamos<br>tu <span class="u-pink">marca</span> o<br>proyecto <svg class="hero__rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" role="img"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+          Impulsamos<br>tu <span class="u-pink">marca</span><br>o proyecto
         </h1>
         <div class="hero__cta">
           <a class="btn btn--accent" href="#contacto">Impulsá tu marca</a>
           <a class="btn btn--ghost" href="#servicios">Ver servicios</a>
         </div>
       </div>
-      <span class="manuela hero__manuela" aria-hidden="true"></span>
+      <div class="hero__visual" aria-hidden="true">
+        <span class="manuela hero__manuela"></span>
+      </div>
     </div>
   </section>
 
@@ -351,28 +353,34 @@
     </div>
   </section>
 
-  <!-- ============ CONTENIDO / CARRETE ============ -->
+  <!-- ============ CONTENIDO ============ -->
   <section class="section reel" id="contenido">
     <div class="container">
       <header class="section__head reveal">
         <span class="section__num">04</span>
-        <h2 class="section__title">Nuestro carrete<span class="u-pink">.</span></h2>
-        <p class="section__intro">
-          Un poco de todo lo que estuvimos creando últimamente.
-          <a href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener">Instagram<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></a>
-          <a href="https://www.youtube.com/@Bartol.marketing" target="_blank" rel="noopener">YouTube<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></a>
-        </p>
+        <h2 class="section__title">Contenido<span class="u-pink">.</span></h2>
+        <p class="section__intro">Un poco de todo lo que estuvimos creando últimamente. Mirá nuestros videos y seguínos en Instagram para ver más.</p>
       </header>
 
+      <!-- Videos de YouTube: el JS (assets/js/main.js, array VIDEO_IDS) inserta los iframes aquí.
+           Mientras VIDEO_IDS esté vacío este bloque queda oculto. -->
+      <div class="videos reveal" id="videos" hidden>
+        <div class="videos-grid" id="video-grid"></div>
+      </div>
+
       <div class="reel-grid reveal">
-        <a class="reel__item" href="https://www.youtube.com/@Bartol.marketing" target="_blank" rel="noopener" data-platform="youtube"><img src="/assets/img/reel/reel-01.webp" alt="Producción de contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">YouTube<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></span></a>
-        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-04.webp" alt="Contenido de Bartol Marketing para La Mascota" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></span></a>
-        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-03.webp" alt="Contenido de Bartol Marketing para Bravery" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></span></a>
-        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-07.webp" alt="Contenido de Bartol Marketing para Bauta" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></span></a>
-        <a class="reel__item" href="https://www.youtube.com/@Bartol.marketing" target="_blank" rel="noopener" data-platform="youtube"><img src="/assets/img/reel/reel-06.webp" alt="Detrás de cámaras de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true">YouTube<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></span></a>
-        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-05.webp" alt="Contenido de Bartol Marketing para La Mascota" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></span></a>
-        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-09.webp" alt="Contenido de Bartol Marketing para Bauta" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></span></a>
-        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" data-platform="instagram"><img src="/assets/img/reel/reel-02.webp" alt="Producción de contenido de nutrición" loading="lazy"><span class="reel__overlay" aria-hidden="true">Instagram<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="/assets/img/reel/reel-01.webp" alt="Producción de contenido de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true"><svg class="reel__ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg><span>Ver</span></span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="/assets/img/reel/reel-04.webp" alt="Contenido de Bartol Marketing para La Mascota" loading="lazy"><span class="reel__overlay" aria-hidden="true"><svg class="reel__ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg><span>Ver</span></span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="/assets/img/reel/reel-03.webp" alt="Contenido de Bartol Marketing para Bravery" loading="lazy"><span class="reel__overlay" aria-hidden="true"><svg class="reel__ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg><span>Ver</span></span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="/assets/img/reel/reel-07.webp" alt="Contenido de Bartol Marketing para Bauta" loading="lazy"><span class="reel__overlay" aria-hidden="true"><svg class="reel__ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg><span>Ver</span></span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="/assets/img/reel/reel-06.webp" alt="Detrás de cámaras de Bartol Marketing" loading="lazy"><span class="reel__overlay" aria-hidden="true"><svg class="reel__ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg><span>Ver</span></span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="/assets/img/reel/reel-05.webp" alt="Contenido de Bartol Marketing para La Mascota" loading="lazy"><span class="reel__overlay" aria-hidden="true"><svg class="reel__ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg><span>Ver</span></span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="/assets/img/reel/reel-09.webp" alt="Contenido de Bartol Marketing para Bauta" loading="lazy"><span class="reel__overlay" aria-hidden="true"><svg class="reel__ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg><span>Ver</span></span></a>
+        <a class="reel__item" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" aria-label="Ver en Instagram"><img src="/assets/img/reel/reel-02.webp" alt="Producción de contenido de nutrición" loading="lazy"><span class="reel__overlay" aria-hidden="true"><svg class="reel__ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg><span>Ver</span></span></a>
+      </div>
+
+      <div class="reel-cta reveal">
+        <a class="btn btn--accent" href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener"><svg class="btn__ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.3" fill="currentColor" stroke="none"/></svg> Seguínos en Instagram</a>
       </div>
     </div>
   </section>
@@ -450,24 +458,46 @@
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
   <div class="container">
-    <div class="site-footer__top">
-      <a class="footer-lockup" href="#inicio" aria-label="Bartol Marketing — Inicio">
-        <img class="footer-lockup__img footer-lockup__img--dark" src="/assets/img/brand/principal-dark-t.png" alt="Bartol Marketing" width="613" height="354">
-        <img class="footer-lockup__img footer-lockup__img--light" src="/assets/img/brand/principal-light-t.png" alt="Bartol Marketing" width="613" height="354">
-      </a>
-      <nav class="footer-nav" aria-label="Navegación del pie">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a class="footer-lockup" href="#inicio" aria-label="Bartol Marketing — Inicio">
+          <img class="footer-lockup__img footer-lockup__img--dark" src="/assets/img/brand/principal-dark-t.png" alt="Bartol Marketing" width="613" height="354" loading="lazy">
+          <img class="footer-lockup__img footer-lockup__img--light" src="/assets/img/brand/principal-light-t.png" alt="" aria-hidden="true" width="613" height="354" loading="lazy">
+        </a>
+        <p class="footer-brand__tagline">Estudio creativo de marketing en Montevideo, Uruguay. Estrategia, creatividad y resultados.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Navegación del pie">
+        <h3 class="footer-col__title">Navegación</h3>
         <a href="#servicios">Servicios</a>
         <a href="#nosotros">Nosotr@s</a>
         <a href="#contenido">Contenido</a>
         <a href="#clientes">Clientes</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <div class="footer-social">
-        <a href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" aria-label="Instagram de Bartol Marketing">Instagram<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></a>
-        <a href="https://www.youtube.com/@Bartol.marketing" target="_blank" rel="noopener" aria-label="YouTube de Bartol Marketing">YouTube<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></a>
-        <a href="https://wa.me/59892711562" target="_blank" rel="noopener" aria-label="WhatsApp de Bartol Marketing">WhatsApp<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></a>
-        <a href="mailto:bartol.marketing@gmail.com" aria-label="Email de Bartol Marketing">Email<svg class="ico-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11L11 5M5.5 5H11v5.5"/></svg></a>
+
+      <div class="footer-col">
+        <h3 class="footer-col__title">Contacto</h3>
+        <a href="mailto:bartol.marketing@gmail.com">bartol.marketing@gmail.com</a>
+        <a href="tel:+59892711562">(+598) 092 711 562</a>
+        <span>Montevideo, Uruguay</span>
       </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col__title">Seguinos</h3>
+        <ul class="footer-social">
+          <li><a href="https://www.instagram.com/bartol.marketing/" target="_blank" rel="noopener" aria-label="Instagram de Bartol Marketing">
+            <svg class="ico-social" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg><span>Instagram</span></a></li>
+          <li><a href="https://www.youtube.com/@Bartol.marketing" target="_blank" rel="noopener" aria-label="YouTube de Bartol Marketing">
+            <svg class="ico-social" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12zM9.8 15.3V8.7l6 3.3z"/></svg><span>YouTube</span></a></li>
+          <li><a href="https://wa.me/59892711562" target="_blank" rel="noopener" aria-label="WhatsApp de Bartol Marketing">
+            <svg class="ico-social" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 0 1 6.9 12.6 8.2 8.2 0 0 1-10.3 3l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.1c-.2 0-.4 0-.6.3-.2.2-.8.7-.8 1.8s.8 2.1.9 2.2c.1.2 1.6 2.5 3.9 3.4 1.9.8 2.3.6 2.7.6.4 0 1.3-.5 1.5-1.1.2-.5.2-1 .1-1.1l-.4-.2c-.2-.1-1.3-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.1-.3.2-.5 0-.2-.1-1-.3-1.8-1-.7-.6-1.1-1.3-1.3-1.5-.1-.2 0-.4.1-.5l.4-.4.2-.4v-.4l-.7-1.8c-.2-.5-.4-.4-.5-.4h-.4z"/></svg><span>WhatsApp</span></a></li>
+          <li><a href="mailto:bartol.marketing@gmail.com" aria-label="Email de Bartol Marketing">
+            <svg class="ico-social" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></svg><span>Email</span></a></li>
+        </ul>
+      </div>
+
     </div>
     <div class="site-footer__bottom">
       <p>© <span id="year">2026</span> Bartol Marketing — Montevideo, Uruguay.</p>
@@ -477,6 +507,6 @@
   <span class="manuela site-footer__manuela" aria-hidden="true"></span>
 </footer>
 
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js?v=4" defer></script>
 </body>
 </html>

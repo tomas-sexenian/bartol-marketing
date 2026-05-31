@@ -296,6 +296,76 @@
     });
   }
 
+  /* ---------- Videos de YouTube (facade: thumbnail -> iframe al click) ----------
+     Para agregar/editar videos: sumá objetos a VIDEOS.
+     - id: los 11 caracteres del enlace youtube (…/watch?v=XXXXXXXXXXX o /shorts/XXXXXXXXXXX)
+     - title: texto que se muestra debajo
+     - vertical: true si es un Short (vertical 9:16); false/omitir si es horizontal 16:9
+     Si VIDEOS está vacío, la sección de videos queda oculta automáticamente. */
+  var VIDEOS = [
+    { id: 'IqvbeMzvjtY', title: 'Trucos de edición en CapCut', vertical: true }
+  ];
+
+  (function renderVideos() {
+    var wrap = doc.getElementById('videos');
+    var grid = doc.getElementById('video-grid');
+    if (!wrap || !grid || !VIDEOS.length) return;
+
+    VIDEOS.forEach(function (v) {
+      var card = doc.createElement('article');
+      card.className = 'video-card' + (v.vertical ? ' video-card--vertical' : '');
+
+      var btn = doc.createElement('button');
+      btn.type = 'button';
+      btn.className = 'video-card__btn';
+      btn.setAttribute('data-yt', v.id);
+      btn.setAttribute('aria-label', 'Reproducir: ' + v.title);
+
+      var thumb = doc.createElement('img');
+      thumb.className = 'video-card__thumb';
+      thumb.src = 'https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg';
+      thumb.alt = '';
+      thumb.loading = 'lazy';
+      btn.appendChild(thumb);
+
+      var play = doc.createElement('span');
+      play.className = 'video-card__play';
+      play.setAttribute('aria-hidden', 'true');
+      var svgNS = 'http://www.w3.org/2000/svg';
+      var svg = doc.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 24 24');
+      svg.setAttribute('fill', 'currentColor');
+      var path = doc.createElementNS(svgNS, 'path');
+      path.setAttribute('d', 'M8 5v14l11-7z');
+      svg.appendChild(path);
+      play.appendChild(svg);
+      btn.appendChild(play);
+
+      btn.addEventListener('click', function () {
+        if (btn.querySelector('iframe')) return;
+        var iframe = doc.createElement('iframe');
+        iframe.src = 'https://www.youtube-nocookie.com/embed/' + v.id +
+                     '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+        iframe.title = v.title;
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        while (btn.firstChild) btn.removeChild(btn.firstChild);
+        btn.appendChild(iframe);
+      });
+
+      var title = doc.createElement('h3');
+      title.className = 'video-card__title';
+      title.textContent = v.title;
+
+      card.appendChild(btn);
+      card.appendChild(title);
+      grid.appendChild(card);
+    });
+
+    wrap.hidden = false;
+  })();
+
   /* ---------- Footer year ---------- */
   var yearEl = doc.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
