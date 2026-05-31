@@ -152,9 +152,10 @@
     sections.forEach(function (s) { spy.observe(s); });
   }
 
-  /* ---------- Contact form -> WhatsApp / email ---------- */
+  /* ---------- Contact form -> WhatsApp / email (with fallbacks) ---------- */
   var form = doc.getElementById('contact-form');
   var status = doc.getElementById('form-status');
+  var fallback = doc.getElementById('form-fallback');
   var emailBtn = doc.getElementById('send-email');
   var WA_NUMBER = '59892711562';
   var EMAIL = 'bartol.marketing@gmail.com';
@@ -177,34 +178,121 @@
     return ok;
   }
   function buildMessage(d) {
-    var lines = ['Hola Bartol Marketing 👋', ''];
+    var lines = ['Hola Bartol Marketing,', ''];
     lines.push('Nombre / empresa: ' + d.name);
     if (d.email.trim()) lines.push('Email: ' + d.email);
     if (d.service) lines.push('Servicio: ' + d.service);
     if (d.message.trim()) lines.push('Mensaje: ' + d.message);
     return lines.join('\n');
   }
-  function flash(msg) { if (status) status.textContent = msg; }
+  function flash(msg) { if (status) status.textContent = msg || ''; }
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      try {
+        var ta = doc.createElement('textarea');
+        ta.value = text; ta.setAttribute('readonly', '');
+        ta.style.position = 'absolute'; ta.style.left = '-9999px';
+        doc.body.appendChild(ta); ta.select();
+        var ok = doc.execCommand('copy');
+        doc.body.removeChild(ta);
+        ok ? resolve() : reject();
+      } catch (e) { reject(e); }
+    });
+  }
+
+  // Build fallback UI with safe DOM methods (no innerHTML -> no XSS from user input).
+  function clearFallback() {
+    if (!fallback) return;
+    while (fallback.firstChild) fallback.removeChild(fallback.firstChild);
+    fallback.hidden = true;
+  }
+  function el(tag, text, attrs) {
+    var node = doc.createElement(tag);
+    if (text) node.textContent = text;
+    if (attrs) Object.keys(attrs).forEach(function (k) { node.setAttribute(k, attrs[k]); });
+    return node;
+  }
+  function showFallback(nodes) {
+    if (!fallback) return;
+    clearFallback();
+    var p = doc.createElement('p');
+    nodes.forEach(function (n) { p.appendChild(typeof n === 'string' ? doc.createTextNode(n) : n); });
+    fallback.appendChild(p);
+    fallback.hidden = false;
+  }
+
+  // Detect whether opening a protocol actually took the user away from the page.
+  function watchLeave(onStay, ms) {
+    var left = false;
+    function mark() { left = true; }
+    window.addEventListener('blur', mark, { once: true });
+    function vc() { if (doc.hidden) { left = true; doc.removeEventListener('visibilitychange', vc); } }
+    doc.addEventListener('visibilitychange', vc);
+    setTimeout(function () {
+      window.removeEventListener('blur', mark);
+      doc.removeEventListener('visibilitychange', vc);
+      if (!left) onStay();
+    }, ms || 1400);
+  }
 
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      clearFallback();
       var d = getData();
       if (!validate(d)) { flash('Completá tu nombre y el servicio que buscás.'); return; }
-      var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(buildMessage(d));
-      window.open(url, '_blank', 'noopener');
-      flash('¡Listo! Te abrimos WhatsApp con tu mensaje. 🚀');
+      var msg = buildMessage(d);
+      var url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+      // window.open must run synchronously inside the click gesture (avoids popup blocking).
+      var win = window.open(url, '_blank', 'noopener');
+      var blocked = !win || win.closed || typeof win.closed === 'undefined';
+      copyText(msg)['catch'](function () {}).then(function () {
+        if (blocked) {
+          flash('');
+          showFallback([
+            'No pudimos abrir WhatsApp automáticamente. ',
+            el('a', 'Abrir WhatsApp', { href: url, target: '_blank', rel: 'noopener' }),
+            ' (copiamos tu mensaje) o escribinos a ',
+            el('a', EMAIL, { href: 'mailto:' + EMAIL }), '.'
+          ]);
+        } else {
+          flash('Te abrimos WhatsApp con tu mensaje.');
+        }
+      });
     });
   }
+
   if (emailBtn) {
     emailBtn.addEventListener('click', function () {
+      clearFallback();
       var d = getData();
       if (!validate(d)) { flash('Completá tu nombre y el servicio que buscás.'); return; }
+      var msg = buildMessage(d);
       var subject = 'Consulta web — ' + (d.service || 'Bartol Marketing');
       var url = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) +
-                '&body=' + encodeURIComponent(buildMessage(d));
-      window.location.href = url;
-      flash('Te abrimos tu correo con el mensaje. 💌');
+                '&body=' + encodeURIComponent(msg);
+      // Copy first so the user always keeps the message, then try to open the mail client.
+      copyText(msg)['catch'](function () {}).then(function () {
+        flash('Abriendo tu correo…');
+        var a = doc.createElement('a');
+        a.href = url; a.style.display = 'none';
+        doc.body.appendChild(a); a.click(); doc.body.removeChild(a);
+        var waUrl = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(msg);
+        watchLeave(function () {
+          flash('');
+          showFallback([
+            'No pudimos abrir tu correo. Copiamos tu mensaje: escribinos a ',
+            el('a', EMAIL, { href: 'mailto:' + EMAIL }),
+            ' o por ',
+            el('a', 'WhatsApp', { href: waUrl, target: '_blank', rel: 'noopener' }),
+            ' y pegalo.'
+          ]);
+        }, 1400);
+      });
     });
   }
 
