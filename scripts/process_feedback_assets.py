@@ -154,10 +154,7 @@ reel_map = [
     ("IMG_6169.jpg", "reel-05.webp"),   # Bernese (grooming)
     ("IMG_8887.jpg", "reel-06.webp"),   # filming setup (YouTube)
     ("3CC1F40C-934F-425C-A2A3-3ACBA7491011.jpg", "reel-07.webp"),  # Bauta bag
-    ("5BA2A07D-7C78-423C-899B-69AF46D3D305.jpg", "reel-08.webp"),  # pizza counter
     ("73DF2CAC-4918-4388-9621-DE67DB5EBAC1.jpg", "reel-09.webp"),  # dough
-    ("B960C670-B69F-4719-97B4-D85C7BD81EA9.jpg", "reel-10.webp"),  # Bauta man
-    ("D5A58A76-3C8D-4E55-B24E-1F17DFB59115.jpg", "reel-11.webp"),  # oven
 ]
 for src, dst in reel_map:
     to_webp(os.path.join(CARRETE, src), os.path.join(OUT_REEL, dst))
