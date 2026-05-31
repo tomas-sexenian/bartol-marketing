@@ -559,7 +559,7 @@ a:hover .ico-arrow { animation: arrow-nudge .5s var(--ease-out); }
 }
 .hero__manuela { -webkit-mask-image: url("/assets/img/manuela/manuela-happy.png"); mask-image: url("/assets/img/manuela/manuela-happy.png"); }
 .contact__manuela { -webkit-mask-image: url("/assets/img/manuela/manuela-heart.png"); mask-image: url("/assets/img/manuela/manuela-heart.png"); }
-.site-footer__manuela { -webkit-mask-image: url("/assets/img/manuela/manuela-pensive.png"); mask-image: url("/assets/img/manuela/manuela-pensive.png"); }
+.site-footer__manuela { -webkit-mask-image: url("/assets/img/manuela/manuela-heart.png"); mask-image: url("/assets/img/manuela/manuela-heart.png"); }
 
 .reveal { opacity: 0; transform: translateY(34px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
 .reveal.is-visible { opacity: 1; transform: none; }
